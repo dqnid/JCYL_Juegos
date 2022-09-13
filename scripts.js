@@ -15,5 +15,3 @@ for (let key in json){
     console.log(json[key].nombre);
     L.marker([json[key].lat,json[key].lng]).addTo(map);
 }
-
-//a
