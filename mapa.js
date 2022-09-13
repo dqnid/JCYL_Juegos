@@ -23,3 +23,16 @@ function showMarkers(){
 for (let key in marcadores){
 L.marker([marcadores[key].lat,marcadores[key].lng]).addTo(map); 
 }
+
+//configurar popup  
+function popup(feature,layer){
+    if(feature.properties && feature.properties.NAMEUNIT){
+        layer.bindPopup("<strong>Provincia: </strong>"+ feature.properties.NAMEUNIT);
+    }
+}
+//agregar capa en formato geojson
+L.geoJson(cylprovincias).addTo(map);
+
+var cylprovinciasJS = L.geoJson(cylprovincias,{
+    onEachFeature: popup
+}).addTo(map);
