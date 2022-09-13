@@ -1,23 +1,4 @@
-(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-var map = L.map('map').setView([41.96025655115759,-2.392389852116968], 8);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-const basemaps = {
-    StreetView: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}),
-    Topography: L.tileLayer.wms('http://ows.mundialis.de/services/service?',   {layers: 'TOPO-WMS'}),
-    Places: L.tileLayer.wms('http://ows.mundialis.de/services/service?', {layers: 'OSM-Overlay-WMS'})
-};
-L.control.layers(basemaps).addTo(map);
-
-const json = require("./zona_rec.json");
-for (let key in json){
-    console.log(json[key].nombre);
-    L.marker([json[key].lat,json[key].lng]).addTo(map);
-}
-},{"./zona_rec.json":2}],2:[function(require,module,exports){
-module.exports={
+var marcadores = {
     "72319": {
         "lat": "41.96025655115759",
         "lng": "-2.392389852116968",
@@ -2692,4 +2673,3 @@ module.exports={
         "acceso": ""
     }
 }
-},{}]},{},[1]);
