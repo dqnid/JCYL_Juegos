@@ -1,4 +1,6 @@
 var map = L.map('map').setView([41.96025655115759,-2.392389852116968], 8);
+var markers = [];
+
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -10,8 +12,14 @@ const basemaps = {
 };
 L.control.layers(basemaps).addTo(map);
 
-const json = require("./data/zona_rec.json");
-for (let key in json){
-    console.log(json[key].nombre);
-    L.marker([json[key].lat,json[key].lng]).addTo(map);
+function showMarkers(){
+    let markers_size = markers.lenght;
+    for (let i=markers;i<markers_size;i++)
+    {
+        L.marker([markers[i].lat,markers[i].lng]).addTo(map); 
+    }
+}
+
+for (let key in marcadores){
+L.marker([marcadores[key].lat,marcadores[key].lng]).addTo(map); 
 }
