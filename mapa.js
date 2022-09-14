@@ -23,16 +23,63 @@ function showMarkers(){
 for (let key in marcadores){
 L.marker([marcadores[key].lat,marcadores[key].lng]).addTo(map); 
 }
-
+//////////////////////////CAPA LIMITES PROVINCIAS
 //configurar popup  
 function popup(feature,layer){
     if(feature.properties && feature.properties.NAMEUNIT){
-        layer.bindPopup("<strong>Provincia: </strong>"+ feature.properties.NAMEUNIT);
+       layer.bindPopup("<strong>Provincia: </strong>"+ feature.properties.NAMEUNIT);
     }
 }
 //agregar capa en formato geojson
+
 L.geoJson(cylprovincias).addTo(map);
 
 var cylprovinciasJS = L.geoJson(cylprovincias,{
     onEachFeature: popup
 }).addTo(map);
+
+
+////////////////////////////CAPA ARBOLES
+function popup_arboles(feature,layer){
+    if(feature.properties && feature.properties.especie){
+       layer.bindPopup("<strong>Nombre de la especie: </strong>"+ feature.properties.especie);
+    }
+}
+
+var myIcon = L.icon({
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/740/740934.png',
+    iconSize: [20, 30],
+    iconAnchor: [10, 30],
+    popupAnchor: [-3, -30],
+    shadowUrl: 'https://cdn-icons-png.flaticon.com/512/740/740934.png',
+    shadowSize: [20, 30],
+    shadowAnchor: [10, 30]
+});
+
+const marker_arbol = {
+    icon: myIcon
+};
+
+const geojsonMarkerOptions = {
+    // Stroke
+    color: 'black',
+    weight: 2,
+    opacity: 1,
+    // Fill
+    fillColor: 'red',
+    fillOpacity: 1,
+    // Radius
+    radius: 30,
+};
+
+
+var arbolesJS = L.geoJSON(arboles, {
+    pointToLayer: function(feature, latlng) {
+        return L.marker(latlng, marker_arbol);
+    },
+    onEachFeature: popup_arboles
+}).addTo(map);
+
+
+
+
