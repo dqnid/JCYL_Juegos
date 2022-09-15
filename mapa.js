@@ -30,13 +30,83 @@ function popup(feature,layer){
        layer.bindPopup("<strong>Provincia: </strong>"+ feature.properties.NAMEUNIT);
     }
 }
-//agregar capa en formato geojson
 
-L.geoJson(cylprovincias).addTo(map);
+var info = L.control();
 
-var cylprovinciasJS = L.geoJson(cylprovincias,{
-    onEachFeature: popup
+info.onAdd = function(map){
+    this._div = L.DomUtil.create('div','info');
+    this.update();
+    return this._div;
+};
+
+info.update = function(props){
+    this._div.innerHTML = '<h4>Población total:</h4>'+ (props ? '<b>' + props.POB_TOTAL : 'Pasa el puntero por una provincia');
+};
+
+info.addTo(map);
+
+function getColor(d){
+    return  d > 500 ? '#2510a3':
+            d > 400 ? '#0000ff':
+            d > 300 ? '#673dff':
+            d > 200 ? '#926Sff':
+            d > 150 ? '#b38bff':
+            d > 100 ? '#e8d8ff':
+            d > 0 ? '#ff0000':
+                    '#ffffff';
+}
+
+function style(feature){
+    return{
+        fillColor: getColor(feature.properties.POB_TOTAL),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
+
+
+
+function highlightFeature(e){
+    var layer = e.target;
+    layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    info.update(layer.feature.properties);
+}
+
+var cylprovinciasJS;
+
+function resetHighlight(e){
+    cylprovinciasJS.resetStyle(e.target);
+    info.update();
+}
+
+function zoomToFeature(e){
+    map.fitBounds(e.target.getBounds());
+}
+
+function onEachFeature(feature,layer){
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
+}
+
+cylprovinciasJS = L.geoJson(cyl_provincias_con_poblacion,{
+    onEachFeature: onEachFeature,
+    
+    style: style   
 }).addTo(map);
+
+map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https://datosabiertos.jcyl.es/">JCYL</a>');
 
 
 ////////////////////////////CAPA ARBOLES
