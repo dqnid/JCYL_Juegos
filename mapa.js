@@ -1,4 +1,4 @@
-var map = L.map('map').setView([41.96025655115759,-2.392389852116968], 8);
+var map = L.map('map').setView([41.7544, -4.7819], 8);
 var markers = [];
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -151,5 +151,25 @@ var arbolesJS = L.geoJSON(arboles, {
 }).addTo(map);
 
 
+////////AGREGAR BOTONES
+var botonesControl = L.control({position: 'topright'}); // creación del contenedor de botones
+botonesControl.onAdd = function() {                     // creación de los botones
+    var botones = L.DomUtil.create('div', 'class-css-botones');
+    botones.innerHTML = `<button id="arboles"  class="btn btn-primary"><img src="https://cdn-icons-png.flaticon.com/512/740/740934.png" height ="30" width="30" /></button>`;
+    
+    return botones;
+};
+botonesControl.addTo(map);   // adición del contenedor dentro del mapa
 
+document.getElementById('arboles').addEventListener('click', function() {
+    
+    if(!arboles){
+        arbolesJS.addTo(map);
+        arboles=true;
+    }else{
+        arbolesJS.remove(map);
+        arboles=false;
+    }
+        
+});
 
