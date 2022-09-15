@@ -120,7 +120,7 @@ var myIcon = L.icon({
     iconUrl: 'https://cdn-icons-png.flaticon.com/512/740/740934.png',
     iconSize: [20, 30],
     iconAnchor: [10, 30],
-    popupAnchor: [-3, -30],
+    popupAnchor: [0, -30],
     shadowUrl: 'https://cdn-icons-png.flaticon.com/512/740/740934.png',
     shadowSize: [20, 30],
     shadowAnchor: [10, 30]
@@ -173,3 +173,36 @@ document.getElementById('arboles').addEventListener('click', function() {
         
 });
 
+/////////////////AGREGAR RIOS
+
+function popup_rios(feature,layer){
+    if(feature.properties && feature.properties.NOML_RIO){
+       layer.bindPopup("<strong>Nombre del río: </strong>"+ feature.properties.NOML_RIO);
+    }
+}
+
+    
+var riosJS = L.geoJSON(rios, {
+    onEachFeature: popup_rios
+}).addTo(map);
+
+var botonesControl_rios = L.control({position: 'topright'}); // creación del contenedor de botones
+botonesControl_rios.onAdd = function() {                     // creación de los botones
+    var botones_rios = L.DomUtil.create('div', 'class-css-botones');
+    botones_rios.innerHTML = `<button id="rios"  class="btn btn-primary"><img src="https://w7.pngwing.com/pngs/691/386/png-transparent-hand-painted-river-water-river-water-river-face-landscape.png" height ="30" width="30" /></button>`;
+    
+    return botones_rios;
+};
+botonesControl_rios.addTo(map);   // adición del contenedor dentro del mapa
+
+document.getElementById('rios').addEventListener('click', function() {
+    
+    if(!rios){
+        riosJS.addTo(map);
+        rios=true;
+    }else{
+        riosJS.remove(map);
+        rios=false;
+    }
+        
+});
