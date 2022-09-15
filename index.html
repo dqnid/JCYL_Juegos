@@ -8,16 +8,31 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
     integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
     crossorigin=""/>
-    
+
+    <script src="scripts.js" type="module"></script>
     <!--  -->
-    <title>Prueba mapas</title>
+    <title>Disfruta Castilla y León</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
 
   <body>
-    <div id="map"></div>
+    <div id="navbar">
+      <a id="title_navbar">Disfruta Castilla y León</a>
+      <!-- ¿Añadir logo? -->
+      <div id="navMenu">
+        <a>Juegos</a>
+        <a>Árboles</a>
+        <a>Zonas recreativas</a>
+      </div>
+    </div> 
+
+    <div id="content">
+      <div id="top_separator"></div>
+      <div id="intro"></div>
+      <div id="map"></div>
+    </div>
     
-    <!-- Mapa -->
+    <!-- Scripts de configuración del mapa -->
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
       integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
       crossorigin=""> 

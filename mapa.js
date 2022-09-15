@@ -1,4 +1,4 @@
-var map = L.map('map').setView([41.96025655115759,-2.392389852116968], 8);
+var map = L.map('map').setView([41.66585549600211, -4.460670126660962], 8);
 var markers = [];
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
