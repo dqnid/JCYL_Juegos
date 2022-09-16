@@ -151,5 +151,28 @@ var arbolesJS = L.geoJSON(arboles, {
 }).addTo(map);
 
 
+/*
+ * Funciones interactivas
+ */
+function delTrees(){
+    map.removeLayer(arbolesJS);
+//arbolesJS.addTo(map);
+}
 
+function upDateMapConfig(){
+    var trees = document.getElementById("trees").checked;
+    var places = document.getElementById("places").checked;
+    var regions = document.getElementById("regions").checked;
 
+    if (trees === true){
+        arbolesJS.addTo(map);
+    }else{
+        map.removeLayer(arbolesJS);    
+    }
+
+    if (regions === true){
+        cylprovinciasJS.addTo(map);
+    }else{
+        map.removeLayer(cylprovinciasJS);    
+    }
+}

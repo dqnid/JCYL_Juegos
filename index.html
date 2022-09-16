@@ -17,19 +17,40 @@
 
   <body>
     <div id="navbar">
-      <a id="title_navbar">Disfruta Castilla y León</a>
+      <a onclick="delTrees()" id="title_navbar">Disfruta Castilla y León</a>
       <!-- ¿Añadir logo? -->
       <div id="navMenu">
-        <a>Juegos</a>
         <a>Árboles</a>
+        <a>Juegos</a>
         <a>Zonas recreativas</a>
       </div>
     </div> 
 
     <div id="content">
       <div id="top_separator"></div>
-      <div id="intro"></div>
-      <div id="map"></div>
+      <div id="intro">
+        <h1>Descubre Castilla y León</h1>
+        <p>Explora los <a>juegos tradicionales</a> de nuestras ciudades.</p>
+        <p>Descubre los mejores <a>espacios naturales</a> para disfrutar de nuestro terreno.</p>
+        <p>Aprende sobre los <a>árboles singulares</a> que pueblan estas tierras.</p>
+      </div>
+      <div id="mapa">
+        <div id="map"></div>
+        <div id="map_options">
+          <div>
+            <input onClick="upDateMapConfig()" checked="true" type="checkbox" id="trees" name="trees" value="trees">
+            <label for="trees"> Árboles</label><br> 
+          </div>
+          <div>
+            <input type="checkbox" onClick="upDateMapConfig()" checked="true" id="places" name="places" value="places">
+            <label for="places"> Espacios naturales</label><br> 
+          </div>
+          <div>
+            <input type="checkbox" onClick="upDateMapConfig()" id="regions" name="regions" value="regions" checked="true">
+            <label for="regions"> Provincias</label><br>
+          </div>
+        </div>
+      </div>
     </div>
     
     <!-- Scripts de configuración del mapa -->
