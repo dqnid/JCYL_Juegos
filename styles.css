@@ -20,12 +20,14 @@ html,body{
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-bottom: 4px solid black;
 }
 
 #title_navbar{
   grid-column: 1;
   font-size: 32px;
   color: white;
+  background-color: transparent;
   text-align: left;
 }
 
@@ -35,6 +37,7 @@ html,body{
   float:right;
   margin: auto;
   width: 100%;
+  background-color: transparent;
 }
 
 #navMenu a{
