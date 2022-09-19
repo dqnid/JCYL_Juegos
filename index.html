@@ -3,66 +3,198 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport content="width=device-width, initial-scale="1.0">
-    
-    
-
+ 
     <!-- Mapas Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
     integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
     crossorigin=""/>
-    
-    
 
-    <link rel="stylesheet" type="text/css" href="Leaflet.Legend-master/src/leaflet.legend.css">
-    <link rel="stylesheet" type="text/css" href="leaflet-search-master/src/leaflet-search.css">
-   
+    <script src="scripts.js" type="module"></script>
     <!--  -->
-    <title>Prueba mapas</title>
+    <title>Disfruta Castilla y León</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
 
   <body>
- 
-    <div id="map">
-      
+    <div id="navbar">
+      <a id="title_navbar">Disfruta Castilla y León</a>
+      <!-- ¿Añadir logo? -->
+      <div id="navMenu">
+        <a>Árboles</a>
+        <a href="#games">Juegos</a>
+        <a>Zonas recreativas</a>
+      </div>
+    </div> 
 
+    <div id="content">
+      <div id="top_separator"></div>
+      <div id="intro">
+        <h1>Descubre Castilla y León</h1>
+        <p>Explora los <a href="#games">juegos tradicionales</a> de nuestras ciudades.</p>
+        <p>Descubre los mejores <a>espacios naturales</a> para disfrutar de nuestro terreno.</p>
+        <p>Aprende sobre los <a>árboles singulares</a> que pueblan estas tierras.</p>
+      </div>
+      <div id="mapa">
+        <div id="map"></div>
+        <div id="map_options">
+          <div>
+            <input onClick="upDateMapConfig()" checked="true" type="checkbox" id="trees" name="trees" value="trees">
+            <label for="trees"> Árboles</label><br> 
+          </div>
+          <div>
+            <input type="checkbox" onClick="upDateMapConfig()" checked="true" id="places" name="places" value="places">
+            <label for="places"> Espacios naturales</label><br> 
+          </div>
+          <div>
+            <input type="checkbox" onClick="upDateMapConfig()" id="regions" name="regions" value="regions" checked="true">
+            <label for="regions"> Provincias</label><br>
+          </div>
+          <div>
+            <button onclick="centerMap()">Centrar</button>
+          </div>
+        </div>
+      </div>
     </div>
+   
+    <hr>
 
-    <text-area id = "lat">Latitud</text-area>
-    <text-area id = "lng">Longitud</text-area>
+    <div id="games">
+      <div id="intro_games"> 
+        <h1><u>Juegos tradicionales</u></h1>
+        <p>Ponga el cursor sobre una imágen para descubrir un juego tradicional. Haga click sobre ella para obtener información detallada.</p>
+      </div>
+      <div id="cards">
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/barraCastellana.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Barra castellana</h1>
+              <p>El jugador deberá lanzar una barra de hierro la máxima distancia posible, deberá hacer que esta caiga de punta en suelo y efectuará el lanzamiento sin salirse de una zona marcada para este ejercicio.</p>
+              <p>Normas:</p>
+              <ul>
+                <li>El terreno deberá ser de tierra o ceniza.</li>
+                <li>La barra será de hierro, con forma cilíndrica y terminará en punta.</li>
+                <li>El lanzamiento se podrá hacer acorde con varias técnicas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/bolos.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Bolos castellanos</h1>
+              <h2>Info</h2>
+              <p>Descripción</p>
+              <p>Normas</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/calva.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>La calva</h1>
+              <h2>Info</h2>
+              <p>Descripción</p>
+              <p>Normas</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/llave.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>La llave</h1>
+              <h2>Info</h2>
+              <p>Descripción</p>
+              <p>Normas</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/tanga.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>La tanga</h1>
+              <h2>Info</h2>
+              <p>Descripción</p>
+              <p>Normas</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/rana.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>La rana</h1>
+              <h2>Info</h2>
+              <p>Descripción</p>
+              <p>Normas</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/billar.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Billar Romano</h1>
+              <p>Este juego casi propio de Zamora en el que los jugadores tratarán de acercar una colección de bolas propias a una bola principal. Para ello dispondrán de una serie de lanzamientos, con los que acercar sus bolas o alejar las del rival.</p>
+              <p>Normas:</p>
+              <ul>
+                <li>El terreno de juego está hecho de barro, idealmente de mezcla con ceniza y arena tamizada.</li>
+                <li>Se jugará de forma individual o por parejas.</li>
+                <li>Ganarán las bolas que estén más próximas a una común llamada <u>BILI</u>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/troncos.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Corta de Troncos</h1>
+              <h2>Info</h2>
+              <p>Descripción</p>
+              <p>Normas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    <!-- Mapa -->
+    <!-- Scripts de configuración del mapa -->
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
       integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
       crossorigin=""> 
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
-    
-    
-    
-
-    <script src="Leaflet.Legend-master/src/leaflet.legend.js"></script>
-    <script src="Leaflet-search-master/src/leaflet-search.js"></script>
-
     <script src="./Datos/markers.js"></script>
     <script src="./Datos/cyl_provincias_con_poblacion.js"></script>
-    <script src="./Datos/cyl_juegos.js"></script>
-    
     
     <script src="./Datos/arboles.js"></script>
-    <script src="./Datos/juego.png"></script>
-    
-    <script src="./Datos/arbol.png"></script>
-    <!--<script src="./Datos/rios.js"></script>-->
-    <script src="./Datos/miradores.js"></script>
-    
-    <script src="./Datos/zona_recreativa.js"></script>
-    <script src="./Datos/markers2.js"></script>
-    <script src="./Datos/coordenadas.png"></script>
-    <script src="./Datos/parque2.png"></script>
-    <script src="./Datos/prismaticos.png"></script>
-    <script src="./Datos/landscape-7264427.svg"></script>    
     <script type="text/javascript" src="mapa.js"></script>
   </body>
 </html>
-

@@ -1,10 +1,157 @@
 html,body{
   height: 100%;
   width: auto;
+  margin: 0px;
+  padding: 0px;
+  cursor: default;
 }
+
+hr{
+  width: 93%;
+  text-align: center;
+  margin: auto;
+}
+
+#navbar{
+  overflow: hidden;
+  background-color: #ba283b;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  padding: 35px 70px;
+  top: 0;
+  z-index: 99;
+  vertical-align: baseline;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#title_navbar{
+  grid-column: 1;
+  font-size: 32px;
+  color: white;
+  background-color: transparent;
+  text-align: left;
+}
+
+#navMenu{
+  grid-column: 2;
+  text-align: right;
+  float:right;
+  margin: auto;
+  width: 100%;
+  background-color: transparent;
+}
+
+#navMenu a{
+  float: left;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 25px;
+  border-radius: 8px;
+  margin-left: 15px;
+  vertical-align: baseline;
+}
+
+#navMenu a:hover {
+  color: #ddd;
+  background-color: black;
+}
+
+#navMenu a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+#content{
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: grid;
+  grid-template-rows: 0.12fr 0.90fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+#top_separator{
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#intro{
+  height: auto;
+  width: auto;
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 70px;
+  margin-right: 20px;
+}
+
+#intro a{
+  color: #ba283b;
+}
+
+#intro a:hover{
+  color:rgb(3, 117, 60);
+  cursor: pointer;
+}
+
+#mapa {
+  height: auto;
+  width: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 70px;
+  padding: 0px;
+  grid-row: 2;
+  grid-column: 2;
+  border: 6px solid black;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 1fr 0.02fr;
+}
+
 #map {
   height: 100%;
   width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  grid-row: 1;
+  z-index: 1;
+}
+
+#map_options{
+  background-color: black;
+  color: white;
+  height: 100%;
+  width: 100%;
+  grid-row: 2;
+  padding-top: 5px;
+  display: flex;
+}
+#map_options div{
+  margin-right: 8px;
+  cursor: pointer;
+}
+#map_options input{
+  display: inline-block;
+  cursor: pointer;
+}
+#map_options label{
+  cursor: pointer;
 }
 
 .info{
@@ -13,7 +160,7 @@ font: 14px/16px Trebuchet MS;
 background: white;
 background: rgba(255,255,255,0.8);
 box-shadow: 0 0 15px rgba(0,0,0,0.2);
-border-radius: 5px;
+bordeR-radius: 5px;
 }
 
 .info h4{
@@ -21,3 +168,77 @@ border-radius: 5px;
   color: #777;
 }
 
+
+/**
+ * Sección de juegos
+ **/
+#games{
+  width: auto;
+  height: auto;
+  margin: 0px;
+}
+
+#intro_games{
+  margin-left: 70px;
+  margin-bottom: 40px;
+}
+
+#cards{ 
+  display: grid;
+  margin: 70px;
+  gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card {
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+  border-radius: 10px;
+  cursor: context-menu;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: inherit;
+}
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+  border-radius: inherit;
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: inherit;
+}
+.card-front {
+  background-color: #bbb;
+  color: black;
+  border-radius: inherit;
+}
+
+.card-front img{
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+.card-back {
+  background-color: white;
+  transform: rotateY(180deg);
+  border-radius: inherit;
+  text-align: justify;
+  padding: 15px;
+}
+
+.card-back h1{
+  font-size: 26px;
+}
