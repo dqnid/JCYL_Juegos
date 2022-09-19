@@ -176,3 +176,7 @@ function upDateMapConfig(){
         map.removeLayer(cylprovinciasJS);    
     }
 }
+
+function centerMap(){
+    map.setView([41.66585549600211, -4.460670126660962], 8);    
+}
