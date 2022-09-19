@@ -6,6 +6,11 @@ html,body{
   cursor: default;
 }
 
+hr{
+  width: 93%;
+  text-align: center;
+  margin: auto;
+}
 
 #navbar{
   overflow: hidden;
@@ -13,14 +18,13 @@ html,body{
   transition: 0.4s;
   position: fixed;
   width: 100%;
-  padding: 33px 70px;
+  padding: 35px 70px;
   top: 0;
   z-index: 99;
   vertical-align: baseline;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-bottom: 4px solid black;
 }
 
 #title_navbar{
@@ -100,7 +104,7 @@ html,body{
 }
 
 #intro a:hover{
-  color:aqua;
+  color:rgb(3, 117, 60);
   cursor: pointer;
 }
 
@@ -124,7 +128,9 @@ html,body{
   height: 100%;
   width: 100%;
   border-radius: 10px;
+  overflow: hidden;
   grid-row: 1;
+  z-index: 1;
 }
 
 #map_options{
@@ -160,4 +166,79 @@ bordeR-radius: 5px;
 .info h4{
   margin: 0 0 5px;
   color: #777;
+}
+
+
+/**
+ * Sección de juegos
+ **/
+#games{
+  width: auto;
+  height: auto;
+  margin: 0px;
+}
+
+#intro_games{
+  margin-left: 70px;
+  margin-bottom: 40px;
+}
+
+#cards{ 
+  display: grid;
+  margin: 70px;
+  gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card {
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+  border-radius: 10px;
+  cursor: context-menu;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: inherit;
+}
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+  border-radius: inherit;
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: inherit;
+}
+.card-front {
+  background-color: #bbb;
+  color: black;
+  border-radius: inherit;
+}
+
+.card-front img{
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+.card-back {
+  background-color: white;
+  transform: rotateY(180deg);
+  border-radius: inherit;
+  text-align: justify;
+  padding: 15px;
+}
+
+.card-back h1{
+  font-size: 26px;
 }
