@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport content="width=device-width, initial-scale="1.0">
     
+    
 
     <!-- Mapas Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
@@ -12,26 +13,55 @@
     
     
 
+    <link rel="stylesheet" type="text/css" href="Leaflet.Legend-master/src/leaflet.legend.css">
+    <link rel="stylesheet" type="text/css" href="leaflet-search-master/src/leaflet-search.css">
+   
     <!--  -->
     <title>Prueba mapas</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
 
   <body>
+ 
     <div id="map">
-     
+      
+
     </div>
+
+    <text-area id = "lat">Latitud</text-area>
+    <text-area id = "lng">Longitud</text-area>
     
     <!-- Mapa -->
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
       integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
       crossorigin=""> 
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+    
+    
+    
+
+    <script src="Leaflet.Legend-master/src/leaflet.legend.js"></script>
+    <script src="Leaflet-search-master/src/leaflet-search.js"></script>
+
     <script src="./Datos/markers.js"></script>
     <script src="./Datos/cyl_provincias_con_poblacion.js"></script>
+    <script src="./Datos/cyl_juegos.js"></script>
+    
     
     <script src="./Datos/arboles.js"></script>
-    <script src="./Datos/rios.js"></script>
+    <script src="./Datos/juego.png"></script>
+    
+    <script src="./Datos/arbol.png"></script>
+    <!--<script src="./Datos/rios.js"></script>-->
+    <script src="./Datos/miradores.js"></script>
+    
+    <script src="./Datos/zona_recreativa.js"></script>
+    <script src="./Datos/markers2.js"></script>
+    <script src="./Datos/coordenadas.png"></script>
+    <script src="./Datos/parque2.png"></script>
+    <script src="./Datos/prismaticos.png"></script>
+    <script src="./Datos/landscape-7264427.svg"></script>    
     <script type="text/javascript" src="mapa.js"></script>
   </body>
 </html>
