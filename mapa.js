@@ -1,5 +1,5 @@
 var map = L.map('map').setView([41.7544, -4.7819], 8);
-var markers = [];
+//var markers = [];
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -12,17 +12,19 @@ const basemaps = {
 };
 L.control.layers(basemaps).addTo(map);
 
-function showMarkers(){
-    let markers_size = markers.lenght;
-    for (let i=markers;i<markers_size;i++)
-    {
-        L.marker([markers[i].lat,markers[i].lng]).addTo(map); 
-    }
-}
+//function showMarkers(){
+    //let markers_size = markers.lenght;
+    //for (let i=markers;i<markers_size;i++)
+    //{
+      //  L.marker([markers[i].lat,markers[i].lng]).addTo(map); 
+    //}
+//}
 
-for (let key in marcadores){
-L.marker([marcadores[key].lat,marcadores[key].lng]).addTo(map); 
-}
+//for (let key in marcadores){
+//L.marker([marcadores[key].lat,marcadores[key].lng]).addTo(map); 
+//}
+
+
 //////////////////////////CAPA LIMITES PROVINCIAS
 //configurar popup  
 function popup(feature,layer){
@@ -40,7 +42,8 @@ info.onAdd = function(map){
 };
 
 info.update = function(props){
-    this._div.innerHTML = '<h4>Población total:</h4>'+ (props ? '<b>' + props.POB_TOTAL : 'Pasa el puntero por una provincia');
+    this._div.innerHTML = '<h4>Población total (2019):</h4>'+ (props ? '<b>' + props.POB_TOTAL : '') + '<b>' +'<h4>Juego tradicional predominante:</h4>'+ 
+    (props ? '<b>' + props.JUEGO_TRAD : 'Pasa el puntero por una provincia');
 };
 
 info.addTo(map);
@@ -100,7 +103,7 @@ function onEachFeature(feature,layer){
     });
 }
 
-cylprovinciasJS = L.geoJson(cyl_provincias_con_poblacion,{
+cylprovinciasJS = L.geoJson(cyl_juegos,{
     onEachFeature: onEachFeature,
     
     style: style   
@@ -111,17 +114,19 @@ map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https
 
 ////////////////////////////CAPA ARBOLES
 function popup_arboles(feature,layer){
+    const p = feature.properties
+    p.title = p.paraje|| p.equip_b_no || p.nombre || p.equip_b_nombre //create new property 'title'
     if(feature.properties && feature.properties.especie){
        layer.bindPopup("<strong>Nombre de la especie: </strong>"+ feature.properties.especie);
     }
 }
 
 var myIcon = L.icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/740/740934.png',
+    iconUrl: './Datos/arbol.png',
     iconSize: [20, 30],
     iconAnchor: [10, 30],
     popupAnchor: [0, -30],
-    shadowUrl: 'https://cdn-icons-png.flaticon.com/512/740/740934.png',
+    shadowUrl: './Datos/arbol.png',
     shadowSize: [20, 30],
     shadowAnchor: [10, 30]
 });
@@ -172,37 +177,195 @@ document.getElementById('arboles').addEventListener('click', function() {
     }
         
 });
+/////////////////AGREGAR MIRADORES
 
-/////////////////AGREGAR RIOS
-
-function popup_rios(feature,layer){
-    if(feature.properties && feature.properties.NOML_RIO){
-       layer.bindPopup("<strong>Nombre del río: </strong>"+ feature.properties.NOML_RIO);
+function popup_miradores(feature,layer){
+    const p = feature.properties
+    p.title = p.paraje|| p.equip_b_no || p.nombre || p.equip_b_nombre //create new property 'title'
+    if(feature.properties && feature.properties.equip_b_no){
+       layer.bindPopup("<strong>Nombre: </strong>"+ feature.properties.equip_b_no);
     }
 }
 
+var myIcon_miradores = L.icon({
+    iconUrl: './Datos/prismaticos.png',
+    iconSize: [30, 30],
+    iconAnchor: [30, 30],
+    popupAnchor: [-15, -25],
+    shadowUrl: './Datos/prismaticos.png',
+    shadowSize: [30, 30],
+    shadowAnchor: [30, 30]
+});
+
+const marker_miradores = {
+    icon: myIcon_miradores
+};
     
-var riosJS = L.geoJSON(rios, {
-    onEachFeature: popup_rios
+
+
+var miradoresJS = L.geoJSON(miradores, {
+    pointToLayer: function(feature, latlng) {
+        return L.marker(latlng, marker_miradores);
+    },
+    onEachFeature: popup_miradores
 }).addTo(map);
 
-var botonesControl_rios = L.control({position: 'topright'}); // creación del contenedor de botones
-botonesControl_rios.onAdd = function() {                     // creación de los botones
-    var botones_rios = L.DomUtil.create('div', 'class-css-botones');
-    botones_rios.innerHTML = `<button id="rios"  class="btn btn-primary"><img src="https://w7.pngwing.com/pngs/691/386/png-transparent-hand-painted-river-water-river-water-river-face-landscape.png" height ="30" width="30" /></button>`;
+var botonesControl_miradores = L.control({position: 'topright'}); // creación del contenedor de botones
+botonesControl_miradores.onAdd = function() {                     // creación de los botones
+    var botones_miradores = L.DomUtil.create('div', 'class-css-botones');
+    botones_miradores.innerHTML = `<button id="miradores"  class="btn btn-primary"><img src="./Datos/prismaticos.png" height ="30" width="30" /></button>`;
     
-    return botones_rios;
+    return botones_miradores;
 };
-botonesControl_rios.addTo(map);   // adición del contenedor dentro del mapa
+botonesControl_miradores.addTo(map);   // adición del contenedor dentro del mapa
 
-document.getElementById('rios').addEventListener('click', function() {
+document.getElementById('miradores').addEventListener('click', function() {
     
-    if(!rios){
-        riosJS.addTo(map);
-        rios=true;
+    if(!miradores){
+        miradoresJS.addTo(map);
+        miradores=true;
     }else{
-        riosJS.remove(map);
-        rios=false;
+        miradoresJS.remove(map);
+        miradores=false;
     }
         
 });
+
+
+
+
+
+///////////AGREGAR MARCADOR DRAGGED que muestra coordenadas geograficas
+
+
+var myIcon_coords = L.icon({
+    iconUrl: './Datos/coordenadas.png',
+    iconSize: [24, 24],
+    iconAnchor: [24, 24],
+    popupAnchor: [-12, -22],
+    //shadowUrl: './Datos/coordinates-g7ce5759db_1280.svg',
+    shadowSize: [25, 25],
+    shadowAnchor: [25, 25]
+});
+
+var marcador_juego = L.marker([42.508552, -7.805786],{
+    icon: myIcon_coords,
+    draggable: true
+}).addTo(map);
+
+function addToTextBox(lt,ln){
+    document.getElementById('lat').innerHTML = lt;
+    document.getElementById('lng').innerHTML = ln;
+}
+
+// adds listener for drag end event
+marcador_juego.on('dragend', function(event){
+    let marcador_juego = event.target;
+    let location = marcador_juego.getLatLng();
+    let lat = location.lat;
+    let lon = location.lng;
+    addToTextBox(lat,lon);
+    marcador_juego.bindPopup("<b>"+marcador_juego.getLatLng()+"</b>").openPopup();
+});
+/////////////////AGREGAR ZONAS RECREATIVAS
+
+function popup_zona_recreativa(feature,layer){
+    const p = feature.properties
+    p.title = p.paraje|| p.equip_b_no || p.nombre || p.equip_b_nombre //create new property 'title'
+    if(feature.properties && feature.properties.equip_b_nombre){
+       layer.bindPopup("<strong>Nombre: </strong>"+ feature.properties.equip_b_nombre);
+    }
+}
+
+var myIcon_zona_recreativa = L.icon({
+    iconUrl: './Datos/parque2.png',
+    iconSize: [20, 20],
+    iconAnchor: [20, 20],
+    popupAnchor: [-10, -25],
+    shadowUrl: './Datos/parque2.png',
+    shadowSize: [20, 20],
+    shadowAnchor: [20, 20]
+});
+
+const marker_zona_recreativa = {
+    icon: myIcon_zona_recreativa
+};
+    
+
+
+var zonaRecreativaJS = L.geoJSON(markers2, {
+    pointToLayer: function(feature, latlng) {
+        return L.marker(latlng, marker_zona_recreativa);
+    },
+    onEachFeature: popup_zona_recreativa
+}).addTo(map);
+
+var botonesControl_zona_recreativa = L.control({position: 'topright'}); // creación del contenedor de botones
+botonesControl_zona_recreativa.onAdd = function() {                     // creación de los botones
+    var botones_zona_recreativa = L.DomUtil.create('div', 'class-css-botones');
+    botones_zona_recreativa.innerHTML = `<button id="zona_recreativa"  class="btn btn-primary"><img src="./Datos/parque2.png" height ="30" width="30" /></button>`;
+    
+    return botones_zona_recreativa;
+};
+botonesControl_zona_recreativa.addTo(map);   // adición del contenedor dentro del mapa
+
+document.getElementById('zona_recreativa').addEventListener('click', function() {
+    
+    if(!markers2){
+        zonaRecreativaJS.addTo(map);
+        markers2=true;
+    }else{
+        zonaRecreativaJS.remove(map);
+        markers2=false;
+    }
+        
+});
+/////////////////AGREGAR LEYENDA
+const legend = L.control.Legend({
+    position: "bottomright",
+    collapsed: false,
+    symbolWidth: 24,
+    opacity: 1,
+    column: 1,
+    legends: [{
+        label: "Árboles singulares",
+        type: "image",
+        url: "./Datos/arbol.png"
+    },{
+        label: "Miradores en espacios naturales",
+        type: "image",
+        url: "./Datos/prismaticos.png"
+    },{
+        label: "Zonas recreativas en espacios naturales",
+        type: "image",
+        url: "./Datos/parque2.png"
+
+    },{
+        label: "Localizador de coordenadas geográficas",
+        type: "image",
+        url: "./Datos/coordenadas.png"
+    }]
+}).addTo(map);
+
+
+
+/////////////////////AGREGAR BUSCADOR
+
+
+var searchControl_arboles = new L.Control.Search({
+    layer: L.layerGroup([arbolesJS,miradoresJS,zonaRecreativaJS]),
+    circleLocation: true
+});
+
+searchControl_arboles.on('search_locationfound', function(e) {
+    e.layer.setStyle({fillColor: '#4016ff', color: '#32d1ff'});
+})
+
+map.addControl(searchControl_arboles);
+
+//var searchLayer = L.layerGroup([arbolesJS]).addTo(map);
+//... adding data in searchLayer ...
+//map.addControl( new L.Control.Search({layer: searchLayer}) );
+//searchLayer is a L.LayerGroup contains searched markers
+
+
