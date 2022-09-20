@@ -15,7 +15,7 @@
     <!--  -->
     <title>Disfruta Castilla y León</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <script src="scripts.js" type="module"></script>
+    <script src="./scripts.js" type="module"></script>
   </head>
 
   <body>
@@ -39,23 +39,6 @@
       </div>
       <div id="mapa">
         <div id="map"></div>
-        <div id="map_options">
-          <div>
-            <input onClick="upDateMapConfig()" checked="true" type="checkbox" id="trees" name="trees" value="trees">
-            <label for="trees"> Árboles</label><br> 
-          </div>
-          <div>
-            <input type="checkbox" onClick="upDateMapConfig()" checked="true" id="places" name="places" value="places">
-            <label for="places"> Espacios naturales</label><br> 
-          </div>
-          <div>
-            <input type="checkbox" onClick="upDateMapConfig()" id="regions" name="regions" value="regions" checked="true">
-            <label for="regions"> Provincias</label><br>
-          </div>
-          <div>
-            <button onclick="centerMap()">Centrar</button>
-          </div>
-        </div>
       </div>
     </div>
    
@@ -67,7 +50,7 @@
         <p>Ponga el cursor sobre una imágen para descubrir un juego tradicional. Haga click sobre ella para obtener información detallada.</p>
       </div>
       <div id="cards">
-        <div class="card">
+        <div class="card" onclick="openGameDetails('barra')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/barraCastellana.jpg"/>
@@ -85,16 +68,14 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('bolos')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/bolos.jpg"/>
             </div>
             <div class="card-back">
               <h1>Bolos castellanos</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>Esta peculiar versión de los bolos conserva los fundamentos de sus respectivos pero añade un giro especial, el objeto a arrojar no será una bola, si no un disco grueso hecho de madera. El objetivo del juego será el mismo que el resto de bolos aquí expuestos, derribar los bolos a distancia. La puntuación se decidirá de igual manera, será premiado aquel que tire más bolos.</p>
             </div>
           </div>
         </div>
@@ -106,9 +87,8 @@
             </div>
             <div class="card-back">
               <h1>La calva</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>Debe su nombre a los calveros, terrenos libres de piedras y maleza aptos para el juego. Consiste en lanzar un gorrón a la calva, que tiene forma de ángulo obtuso y se pone de pie sobre la arena. Se puede jugar en equipos de tres o de forma individual. <p>Cada jugador tiene un total de 25 tiradas y se considera tanto cada vez que el gorrón derriba a la calva, sin tocar el suelo.</p>
+              <p>Gana el equipo que anote más tantos. La liga nacional de Calva impulsada por la Junta de Castilla y León da la oportunidad de disfrutar de este juego.</p>
             </div>
           </div>
         </div>
@@ -120,9 +100,7 @@
             </div>
             <div class="card-back">
               <h1>La llave</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>Juego de lanzamiento de precisión, dónde equipos de entre 4 y 6 miembros lanzarán unas monedas de metal llamadas 'pellos' con el objetivo de acertar a la llave. Lo cual aportará puntos al equipo, el número de puntos variará en función de la modalidad de la llave.</p>
             </div>
           </div>
         </div>
@@ -134,9 +112,16 @@
             </div>
             <div class="card-back">
               <h1>La tanga</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>Es el juego más extendido en toda la comunidad.</p>
+              <ul>
+                <li>¿Tanga, tuta, tarusa, tanguilla, chito, petisa, tuka? Es el cilindro a derribar. </li>
+                  <li>¿Chapa? Pieza colocada sobre la tanga. </li>
+                  <li>¿Doblón, tostón, chocón, pieza, tejo? Es la pieza con la que se derriba la tanga. </li>
+                  <li>¿Formas de lanzamiento? Parado o en movimiento.</li>
+                <li>¿Distancia aproximada de lanzamiento? 20 metros </li>
+                <li>¿Número de tostones por jugador y tirada? 2. </li>
+                <li>¿Número de lanzamientos por partida? 32. </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -148,9 +133,9 @@
             </div>
             <div class="card-back">
               <h1>La rana</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>Dice la leyenda que reyes y nobles de Egipto y Mesopotamia ya jugaban al juego de la rana. Estos pedían un deseo antes de lanzar monedas de oro a los estanques con la esperanza de que si una rana o un sapo se las tragaba, el deseo se cumpliría. El juego de la rana, tal y como lo conocemos en la actualidad, 
+                consiste en introducir un disco de hierro (petaco) desde la línea de tiro a cualquiera de los agujeros de la mesa de la rana. Se puede jugar individualmente o por parejas. Las partidas se juegan a diez tiradas y, en cada una de ellas, cada jugador tiene que lanzar 10 petacos. La puntuación depende del agujero donde se introduzca el petaco.
+                </p>
             </div>
           </div>
         </div>
@@ -180,11 +165,85 @@
             </div>
             <div class="card-back">
               <h1>Corta de Troncos</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>
+                Es un deporte tradicional de zonas de explotación maderera cuyo origen se sitúa en la comarca de Pinares, entre Burgos y Soria. Consiste en el corte de lotes de madera de indeterminadas medidas en el menor tiempo posible. La herramienta homologada para ello es el hacha. Se juega individualmente o por parejas. Cada cortador puede empezar por cualquier tronco de su fila y no es obligatorio seguir un orden.
+                Existen dos posiciones de los troncos: vertical (solo está permitido un corte) y estilo australiano (horizontal de manera que cada cortador pueda darle un corte). 
+              </p>
             </div>
           </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/boloFemeninoAbades.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Bolo femenino de Abades</h1>
+              <p>Modalidad del juego de los bolos, practicado en su origen exclusivamente por las mujeres de la localidad de Abades en Segovia.</p>
+              <p>El juego completo está compuesto por 8 bolos, el bolo Miche o Gerardo, 2 bolas y 2 bolos de lanzar. </p>
+              <p> bolos se colocan en cuatro posiciones diferentes que corresponden con cada jugada: en forma de cuadrado, rombo, triángulo y línea recta. En todas ellas (excepto en la forma de triángulo) el Miche se coloca en el centro. La mayor puntuación se obtiene al derribar este en la posición de triángulo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/boloPalentino.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Bolo Palentino</h1>
+              <p>Modalidad típica de la provincia de Palencia. Existen dos modalidades de juego, cuyo reglamento se recoge en el libro "Reglamentos Deportes Autóctonos" editado por la Junta de Castilla y León. Las diferencias de modalidades tienen que ver con la disposición del terreno de juego, que en cualquier caso tiene unas medidas de 26 metros de largo y 5 metros de ancho.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/boloRib.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Bolo Ribereño</h1>
+              <p>
+                Al igual que el Bolo femenino de Abades, es una modalidad practicada exclusivamente por mujeres en las comarcas de la zona de la Ribera del Duero. Se juega con nueve bolos, que se colocan en forma de cuadrado, en tres filas de tres bolos cada una. Las tiradas se efectúan desde dos puntos diferentes: 20 metros (línea 1) y 5 metros (línea 2).
+                El valor de los bolos derribados desde la línea 1 es de 4 puntos, mientras que el valor de los derribados desde la línea 2 es de 1 punto. Se compite por parejas y cada componente realiza un lanzamiento desde cada línea en cada turno.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/tresTablones.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Bolo tres tablones</h1>
+              <p>
+                Tiene su origen en la comarca de las Merindades, provincia de Burgos. El juegabolos o campo de juego se divide en tres zonas: zona de tiro, zona de cureñas y zona de birle. Se emplean tres tablones sobre los que se plantan tres bolos en cada uno; después se planta el mico, por detrás de los de los bolos centrales.
+                Se realizan dos tiradas, una de subida (desde el cas) y otra de bajada ( birle). Consiste en lanzar la bola desde el cas intentando derribar el mayor numero de bolos posibles y el mico inclusive. El primer bote de la bola debe caer en la cureña; en otro caso se produce una morra y se anula la tirada.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="game-overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeGameDetails()">&times;</a>
+      <div id="game-overlay-content">
+      </div>
+    </div>
+
+    <div id="trees"> 
+      <div id="list">
+        <div class="container">
+          <h1 class="especie">Cedrus atlantica</h1>
+          <p class="ubicationes">Segovia, otro sitio...</p>
+          <p class="singularidad">Es un árbol que se encuentra en tal y tiene tal</p>
+          <img src="./Img/cedrusatlantica.jpg">
         </div>
       </div>
     </div>
@@ -217,5 +276,25 @@
     <script src="./Datos/prismaticos.png"></script>
     <script src="./Datos/landscape-7264427.svg"></script>    
     <script type="text/javascript" src="mapa.js"></script>
+
+    <script>
+      let games_info = [
+        {
+          "id":"barra",
+          "html":
+          "<h1>Info</h1><p>Texto</p>"
+        }
+      ]
+      function openGameDetails(name) {
+        document.getElementById("game-overlay").style.height = "100%";
+        let game = games_info.find(game => game.id === name);
+        document.getElementById("game-overlay-content").innerHTML += game.html;
+      }
+
+      function closeGameDetails() {
+        document.getElementById("game-overlay").style.height = "0%";
+      } 
+    </script>
   </body>
+
 </html>
