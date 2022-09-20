@@ -4,6 +4,7 @@ html,body{
   margin: 0px;
   padding: 0px;
   cursor: default;
+  scroll-behavior: smooth;
 }
 
 hr{
@@ -18,29 +19,28 @@ hr{
   transition: 0.4s;
   position: fixed;
   width: 100%;
-  padding: 35px 70px;
+  padding: 40px 0px;
   top: 0;
   z-index: 99;
   vertical-align: baseline;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-radius: 0px 0px 15px 15px;
 }
 
 #title_navbar{
-  grid-column: 1;
-  font-size: 32px;
+  font-size: 42px;
   color: white;
   background-color: transparent;
   text-align: left;
+  margin-left: 70px;
 }
 
 #navMenu{
-  grid-column: 2;
   text-align: right;
-  float:right;
-  margin: auto;
-  width: 100%;
+  margin-left: auto;
+  margin-right: 70px;
   background-color: transparent;
 }
 
@@ -48,14 +48,13 @@ hr{
   float: left;
   color: black;
   background-color: #ddd;
-  text-align: center;
+  text-align: right;
   padding: 12px;
   text-decoration: none;
   font-size: 24px;
   line-height: 25px;
   border-radius: 8px;
-  margin-left: 15px;
-  vertical-align: baseline;
+  margin-left: 24px;
 }
 
 #navMenu a:hover {
@@ -74,7 +73,7 @@ hr{
   margin: 0px;
   padding: 0px;
   display: grid;
-  grid-template-rows: 0.12fr 0.90fr;
+  grid-template-rows: 0.18fr 1fr;
   grid-template-columns: 1fr 1fr;
 }
 

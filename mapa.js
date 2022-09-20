@@ -365,7 +365,7 @@ const legend = L.control.Legend({
 /////////////////////AGREGAR BUSCADOR
 
 
-var searchControl_arboles = new L.Control.Search({
+var searchControl_arboles = L.Control.Search({
     layer: L.layerGroup([arbolesJS,miradoresJS,zonaRecreativaJS]),
     circleLocation: true
 });
