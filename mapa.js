@@ -96,7 +96,7 @@ cylprovinciasJS = L.geoJson(cyl_juegos,{
     style: style   
 }).addTo(map);
 
-map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https://datosabiertos.jcyl.es/">JCYL&nbsp;&nbsp;</a>');
+map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https://datosabiertos.jcyl.es/">JCYL</a>');
 
 var botonesControl_cyl_provincias = L.control({position: 'topright'}); // creación del contenedor de botones
 botonesControl_cyl_provincias.onAdd = function() {                     // creación de los botones
@@ -255,12 +255,12 @@ var myIcon_coords = L.icon({
     iconSize: [24, 24],
     iconAnchor: [24, 24],
     popupAnchor: [-12, -22],
-    //shadowUrl: './Datos/coordinates-g7ce5759db_1280.svg',
+    shadowUrl: "./Datos/coordenadas.png",
     shadowSize: [25, 25],
     shadowAnchor: [25, 25]
 });
 
-var marcador_juego = L.marker([42.508552, -7.805786],{
+var marcador_coord = L.marker([42.508552, -7.805786],{
     icon: myIcon_coords,
     draggable: true
 }).addTo(map);
@@ -271,13 +271,13 @@ function addToTextBox(lt,ln){
 }
 
 // adds listener for drag end event
-marcador_juego.on('dragend', function(event){
-    let marcador_juego = event.target;
-    let location = marcador_juego.getLatLng();
+marcador_coord.on('drag', function(event){
+    let marcador_coord = event.target;
+    let location = marcador_coord.getLatLng();
     let lat = location.lat;
     let lon = location.lng;
     addToTextBox(lat,lon);
-    marcador_juego.bindPopup("<b>"+marcador_juego.getLatLng()+"</b>").openPopup();
+    marcador_coord.bindPopup("<b>"+marcador_coord.getLatLng()+"</b>").openPopup();
 });
 /////////////////AGREGAR ZONAS RECREATIVAS
 
@@ -363,9 +363,7 @@ const legend = L.control.Legend({
 
 
 /////////////////////AGREGAR BUSCADOR
-
-
-var searchControl_arboles = L.Control.Search({
+var searchControl_arboles = new L.Control.Search({
     layer: L.layerGroup([arbolesJS,miradoresJS,zonaRecreativaJS]),
     circleLocation: true
 });
@@ -375,6 +373,8 @@ searchControl_arboles.on('search_locationfound', function(e) {
 })
 
 map.addControl(searchControl_arboles);
+
+
 
 //var searchLayer = L.layerGroup([arbolesJS]).addTo(map);
 //... adding data in searchLayer ...
