@@ -23,7 +23,7 @@
 
   <body>
     <div id="navbar">
-      <a href="#intro" id="title_navbar"><b>Disfruta Castilla y León</a>
+      <a onClick="window.scrollTo(0, 0);" id="title_navbar"><b>Disfruta Castilla y León</a>
       <!-- ¿Añadir logo? -->
       <div id="navMenu">
         <a id="trees_btn" href="#trees">Árboles</a>
@@ -259,7 +259,8 @@
         </div>
       </div>
     </div>
-  
+    <text-area hidden="true" id = "lat"></text-area>
+    <text-area hidden="true" id = "lng"></text-area>
     <!-- Mapa -->
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
       integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
@@ -361,6 +362,36 @@
           element[counter].parentNode.removeChild(element[counter]);
         }
         element = view.getElementsByTagName('h1');
+        var counter = 0; //nunca cambia
+        while(element.length){
+          element[counter].parentNode.removeChild(element[counter]);
+        }
+        element = view.getElementsByTagName('img');
+        var counter = 0; //nunca cambia
+        while(element.length){
+          element[counter].parentNode.removeChild(element[counter]);
+        }
+        element = view.getElementsByTagName('h2');
+        var counter = 0; //nunca cambia
+        while(element.length){
+          element[counter].parentNode.removeChild(element[counter]);
+        }
+        element = view.getElementsByTagName('h3');
+        var counter = 0; //nunca cambia
+        while(element.length){
+          element[counter].parentNode.removeChild(element[counter]);
+        }
+        element = view.getElementsByTagName('h4');
+        var counter = 0; //nunca cambia
+        while(element.length){
+          element[counter].parentNode.removeChild(element[counter]);
+        }
+        element = view.getElementsByTagName('iframe');
+        var counter = 0; //nunca cambia
+        while(element.length){
+          element[counter].parentNode.removeChild(element[counter]);
+        }
+        element = view.getElementsByTagName('div');
         var counter = 0; //nunca cambia
         while(element.length){
           element[counter].parentNode.removeChild(element[counter]);
