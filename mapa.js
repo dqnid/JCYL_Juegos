@@ -262,7 +262,8 @@ var myIcon_coords = L.icon({
 
 var marcador_coord = L.marker([42.508552, -7.805786],{
     icon: myIcon_coords,
-    draggable: true
+    draggable: true,
+    autoPan: true
 }).addTo(map);
 
 function addToTextBox(lt,ln){
