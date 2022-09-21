@@ -23,7 +23,7 @@
 
   <body>
     <div id="navbar">
-      <a href="#intro" id="title_navbar"><b>Disfruta Castilla y León</a>
+      <a onClick="window.scrollTo(0, 0);" id="title_navbar"><b>Disfruta Castilla y León</a>
       <!-- ¿Añadir logo? -->
       <div id="navMenu">
         <a id="trees_btn" href="#trees">Árboles</a>
@@ -293,7 +293,7 @@
       let games_info = [
         {
           "id":"barra",
-          "html":"./Games/rana.html"
+          "html":"./Games/barra.html"
         },
         {
           "id":"bolos",
@@ -338,7 +338,7 @@
         {
           "id":"tresTablones",
           "html":"./Games/tresTablones.html"
-        },
+        }
       ]
       function openGameDetails(name) {
         document.getElementById("game-overlay").style.height = "100%";
