@@ -12,6 +12,9 @@
     <link rel="stylesheet" type="text/css" href="Leaflet.Legend-master/src/leaflet.legend.css">
     <link rel="stylesheet" type="text/css" href="leaflet-search-master/src/leaflet-search.css">
    
+    <!-- JQuery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
     <!--  -->
     <title>Disfruta Castilla y León</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
@@ -20,12 +23,12 @@
 
   <body>
     <div id="navbar">
-      <a id="title_navbar"><b>Disfruta Castilla y León</a>
+      <a href="#intro" id="title_navbar"><b>Disfruta Castilla y León</a>
       <!-- ¿Añadir logo? -->
       <div id="navMenu">
         <a id="trees_btn" href="#trees">Árboles</a>
         <a id="games_btn" href="#games">Juegos</a>
-        <a href="#trees">Zonas recreativas</a>
+        <a href="#">Zonas recreativas</a>
       </div>
     </div> 
 
@@ -34,9 +37,9 @@
       <div id="intro">
         <h1>Descubre Castilla y León</h1>
         <p>Con sus nueve provincias, Castilla y León es la provincia más extensa de toda España. Cada una de ellas nutrida por sus parajes y tradiciones, y son estos rincones y el folclore que los acompaña lo que tratamos de dar a conocer.</p>
-        <p>Explora los <a href="#games">juegos tradicionales</a> de nuestras regiones.</p>
-        <p>Descubre los mejores <a>espacios naturales</a> para disfrutar de nuestro terreno.</p>
-        <p>Aprende sobre los <a>árboles singulares</a> que pueblan estas tierras.</p>
+        <p>Explora los <a href="#games"><span class="textSpand">juegos tradicionales</span></a> de nuestras regiones.</p>
+        <p>Descubre los mejores <a href="#"><span class="textSpand">espacios naturales</span></a> para disfrutar de nuestro terreno.</p>
+        <p>Aprende sobre los <a href="#trees"><span class="textSpand">árboles singulares</span></a> que pueblan estas tierras.</p>
       </div>
       <div id="mapa">
         <div id="map"></div>
@@ -79,7 +82,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('calva')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/calva.jpg"/>
@@ -92,7 +95,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('llave')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/llave.jpg"/>
@@ -104,7 +107,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('tanga')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/tanga.jpg"/>
@@ -125,7 +128,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('rana')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/rana.jpg"/>
@@ -139,7 +142,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('billar')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/billar.jpg"/>
@@ -157,7 +160,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('troncos')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/troncos.jpg"/>
@@ -172,7 +175,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('boloFemenino')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/boloFemeninoAbades.jpg"/>
@@ -186,7 +189,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('boloPalentino')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/boloPalentino.jpg"/>
@@ -198,7 +201,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('boloRib')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/boloRib.jpg"/>
@@ -213,7 +216,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('tresTablones')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/tresTablones.jpg"/>
@@ -271,7 +274,7 @@
     <script src="./Datos/cyl_provincias_con_poblacion.js"></script>
     <script src="./Datos/cyl_juegos.js"></script>
      
-    <script src="./Datos/arboles.js"></script>
+    <script src="./Datos/arboles33.js"></script>
     <script src="./Datos/juego.png"></script>
     
     <script src="./Datos/arbol.png"></script>
@@ -290,16 +293,60 @@
       let games_info = [
         {
           "id":"barra",
-          "html":
-          "<h1>Info</h1><p>Texto</p>"
-        }
+          "html":"./Games/rana.html"
+        },
+        {
+          "id":"bolos",
+          "html":"./Games/bolos.html"
+        },
+        {
+          "id":"llave",
+          "html":"./Games/llave.html"
+        },
+        {
+          "id":"calva",
+          "html":"./Games/calva.html"
+        },
+        {
+          "id":"tanga",
+          "html":"./Games/tanga.html"
+        },
+        {
+          "id":"rana",
+          "html":"./Games/rana.html"
+        },
+        {
+          "id":"billar",
+          "html":"./Games/billar.html"
+        },
+        {
+          "id":"troncos",
+          "html":"./Games/troncos.html"
+        },
+        {
+          "id":"boloFemenino",
+          "html":"./Games/boloFemenino.html"
+        },
+        {
+          "id":"boloPalentino",
+          "html":"./Games/boloPalentino.html"
+        },
+        {
+          "id":"boloRib",
+          "html":"./Games/boloRib.html"
+        },
+        {
+          "id":"tresTablones",
+          "html":"./Games/tresTablones.html"
+        },
       ]
       function openGameDetails(name) {
         document.getElementById("game-overlay").style.height = "100%";
         clearOVerlay();
         document.getElementById("game-overlay-content");
         let game = games_info.find(game => game.id === name);
-        document.getElementById("game-overlay-content").innerHTML += game.html;
+        /*document.getElementById("game-overlay-content").innerHTML += game.html;*/
+        $("#game-overlay-content").load(game.html);
       }
 
       function closeGameDetails() {
