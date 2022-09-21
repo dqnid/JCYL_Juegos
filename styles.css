@@ -36,11 +36,7 @@ hr{
   text-align: left;
   margin-left: 200px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  text-shadow: 2px 4px 4px rgba(26, 26, 27, 0.6);
-}
-
-#title_navbar:hover{
-  text-shadow: 5px 8px 8px rgba(42, 43, 44, 0.6);
+  text-shadow: 2px 4px 4px rgba(141,153,174,0.6);
 }
 
 #navMenu{
@@ -257,7 +253,6 @@ bordeR-radius: 5px;
   transform: rotateY(180deg);
   border-radius: inherit;
   text-align: justify;
-  padding: 20px;
 }
 
 .card-back h1{
