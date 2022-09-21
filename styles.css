@@ -5,6 +5,7 @@ html,body{
   padding: 0px;
   cursor: default;
   scroll-behavior: smooth;
+  background-color: whitesmoke;
 }
 
 hr{
@@ -26,40 +27,52 @@ hr{
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-radius: 0px 0px 15px 15px;
 }
 
 #title_navbar{
-  font-size: 42px;
+  font-size: 46px;
   color: white;
   background-color: transparent;
   text-align: left;
-  margin-left: 70px;
+  margin-left: 200px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 2px 4px 4px rgba(141,153,174,0.6);
 }
 
 #navMenu{
   text-align: right;
+  margin-right: 200px;
   margin-left: auto;
-  margin-right: 70px;
-  background-color: transparent;
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align:text-bottom;
 }
 
 #navMenu a{
-  float: left;
+  float: right;
   color: black;
-  background-color: #ddd;
+  background-color: #EDF2F4;
   text-align: right;
   padding: 12px;
   text-decoration: none;
   font-size: 24px;
   line-height: 25px;
   border-radius: 8px;
-  margin-left: 24px;
+  margin-left: 32px;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+  transition: transform .2s;
 }
 
-#navMenu a:hover {
+#trees_btn:hover{
+  color: black;
+  background-color: #EDF2F4;
+  transform: scale(1.2);
+}
+
+#games_btn:hover{
   color: #ddd;
-  background-color: black;
+  background-color: #2B2D42;
+  transform: scale(1.2);
 }
 
 #navMenu a.active {
@@ -74,7 +87,7 @@ hr{
   padding: 0px;
   display: grid;
   grid-template-rows: 0.18fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.9fr 1fr;
 }
 
 #top_separator{
@@ -94,8 +107,8 @@ hr{
   grid-row: 2;
   margin-top: 40px;
   margin-bottom: 40px;
-  margin-left: 70px;
-  margin-right: 20px;
+  margin-left: 200px;
+  margin-right: 50px;
 }
 
 #intro a{
@@ -107,18 +120,23 @@ hr{
   cursor: pointer;
 }
 
+#intro p{
+  text-align: justify;
+}
+
 #mapa {
   height: auto;
   width: auto;
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 20px;
-  margin-right: 70px;
+  margin-right: 200px;
   padding: 0px;
   grid-row: 2;
   grid-column: 2;
-  border: 6px solid black;
-  border-radius: 10px;
+  border: 2px solid black;
+  border-radius: 20px 0px 20px 0px;
+  box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
   display: grid;
   grid-template-rows: 1fr;
 }
@@ -126,7 +144,7 @@ hr{
 #map {
   height: 100%;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 20px 0px 20px 0px;
   overflow: hidden;
   grid-row: 1;
   z-index: 1;
@@ -151,21 +169,35 @@ bordeR-radius: 5px;
  * Sección de juegos
  **/
 #games{
-  width: auto;
+  width: 100%;
   height: auto;
-  margin: 0px;
+  text-align: center;
+  padding-top: 100px;
 }
 
 #intro_games{
-  margin-left: 70px;
+  text-align: center;
+  width: auto;
   margin-bottom: 40px;
+  margin-left: 70px;
+  margin-right: 70px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgb(43, 45, 66);
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 0px 30px 0px 30px;
 }
 
 #cards{ 
-  display: grid;
-  margin: 70px;
-  gap: 50px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: inline-grid;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  row-gap: 100px;
+  column-gap: 100px;
+  width: auto;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .card {
@@ -221,6 +253,10 @@ bordeR-radius: 5px;
   font-size: 26px;
 }
 
+.card-back p{
+  font-size: 22;
+}
+
 /**
  * Overlay de juegos
  **/
@@ -260,6 +296,22 @@ bordeR-radius: 5px;
 #trees{
   width: 100%;
   text-align: center;
+  padding-top: 100px;
+}
+
+#trees_intro{
+  width: auto;
+  text-align: center;
+  width: auto;
+  margin-bottom: 40px;
+  margin-left: 70px;
+  margin-right: 70px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgb(237, 242, 244);
+  color: black;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 0px 30px 0px 30px;
 }
 
 #list{

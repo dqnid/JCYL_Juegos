@@ -36,11 +36,11 @@ info.update = function(props){
 info.addTo(map);
 
 function getColor(d){
-    return  d > 500 ? '#cbff0d':
-            d > 400 ? '#c7ffd3':
-            d > 300 ? '#009a18':
-            d > 200 ? '#926Sff':
-            d > 150 ? '#f4a8ff':
+    return  d > 500 ? '#D80032':
+            d > 400 ? '#EF233C':
+            d > 300 ? '#8D99AE':
+            d > 200 ? '#EDF2F4':
+            d > 150 ? '#2B2D42':
             d > 100 ? '#ffd676':
             d > 0 ? '#ff84ad':
                     '#ffffff';
