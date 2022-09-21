@@ -36,11 +36,11 @@ info.update = function(props){
 info.addTo(map);
 
 function getColor(d){
-    return  d > 500 ? '#cbff0d':
-            d > 400 ? '#c7ffd3':
-            d > 300 ? '#009a18':
-            d > 200 ? '#926Sff':
-            d > 150 ? '#f4a8ff':
+    return  d > 500 ? '#D80032':
+            d > 400 ? '#EF233C':
+            d > 300 ? '#8D99AE':
+            d > 200 ? '#EDF2F4':
+            d > 150 ? '#2B2D42':
             d > 100 ? '#ffd676':
             d > 0 ? '#ff84ad':
                     '#ffffff';
@@ -96,7 +96,7 @@ cylprovinciasJS = L.geoJson(cyl_juegos,{
     style: style   
 }).addTo(map);
 
-map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https://datosabiertos.jcyl.es/">JCYL</a>');
+map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https://datosabiertos.jcyl.es/">JCYL&nbsp;&nbsp;</a>');
 
 var botonesControl_cyl_provincias = L.control({position: 'topright'}); // creación del contenedor de botones
 botonesControl_cyl_provincias.onAdd = function() {                     // creación de los botones
@@ -365,7 +365,7 @@ const legend = L.control.Legend({
 /////////////////////AGREGAR BUSCADOR
 
 
-var searchControl_arboles = new L.Control.Search({
+var searchControl_arboles = L.Control.Search({
     layer: L.layerGroup([arbolesJS,miradoresJS,zonaRecreativaJS]),
     circleLocation: true
 });

@@ -12,20 +12,23 @@
     <link rel="stylesheet" type="text/css" href="Leaflet.Legend-master/src/leaflet.legend.css">
     <link rel="stylesheet" type="text/css" href="leaflet-search-master/src/leaflet-search.css">
    
+    <!-- JQuery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
     <!--  -->
     <title>Disfruta Castilla y León</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <script src="scripts.js" type="module"></script>
+    <script src="./scripts.js" type="module"></script>
   </head>
 
   <body>
     <div id="navbar">
-      <a id="title_navbar">Disfruta Castilla y León</a>
+      <a onClick="window.scrollTo(0, 0);" id="title_navbar"><b>Disfruta Castilla y León</a>
       <!-- ¿Añadir logo? -->
       <div id="navMenu">
-        <a>Árboles</a>
-        <a href="#games">Juegos</a>
-        <a>Zonas recreativas</a>
+        <a id="trees_btn" href="#trees">Árboles</a>
+        <a id="games_btn" href="#games">Juegos</a>
+        <a href="#">Zonas recreativas</a>
       </div>
     </div> 
 
@@ -33,33 +36,15 @@
       <div id="top_separator"></div>
       <div id="intro">
         <h1>Descubre Castilla y León</h1>
-        <p>Explora los <a href="#games">juegos tradicionales</a> de nuestras ciudades.</p>
-        <p>Descubre los mejores <a>espacios naturales</a> para disfrutar de nuestro terreno.</p>
-        <p>Aprende sobre los <a>árboles singulares</a> que pueblan estas tierras.</p>
+        <p>Con sus nueve provincias, Castilla y León es la provincia más extensa de toda España. Cada una de ellas nutrida por sus parajes y tradiciones, y son estos rincones y el folclore que los acompaña lo que tratamos de dar a conocer.</p>
+        <p>Explora los <a href="#games"><span class="textSpand">juegos tradicionales</span></a> de nuestras regiones.</p>
+        <p>Descubre los mejores <a href="#"><span class="textSpand">espacios naturales</span></a> para disfrutar de nuestro terreno.</p>
+        <p>Aprende sobre los <a href="#trees"><span class="textSpand">árboles singulares</span></a> que pueblan estas tierras.</p>
       </div>
       <div id="mapa">
         <div id="map"></div>
-        <div id="map_options">
-          <div>
-            <input onClick="upDateMapConfig()" checked="true" type="checkbox" id="trees" name="trees" value="trees">
-            <label for="trees"> Árboles</label><br> 
-          </div>
-          <div>
-            <input type="checkbox" onClick="upDateMapConfig()" checked="true" id="places" name="places" value="places">
-            <label for="places"> Espacios naturales</label><br> 
-          </div>
-          <div>
-            <input type="checkbox" onClick="upDateMapConfig()" id="regions" name="regions" value="regions" checked="true">
-            <label for="regions"> Provincias</label><br>
-          </div>
-          <div>
-            <button onclick="centerMap()">Centrar</button>
-          </div>
-        </div>
       </div>
     </div>
-   
-    <hr>
 
     <div id="games">
       <div id="intro_games"> 
@@ -67,7 +52,7 @@
         <p>Ponga el cursor sobre una imágen para descubrir un juego tradicional. Haga click sobre ella para obtener información detallada.</p>
       </div>
       <div id="cards">
-        <div class="card">
+        <div class="card" onclick="openGameDetails('barra')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/barraCastellana.jpg"/>
@@ -85,77 +70,79 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('bolos')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/bolos.jpg"/>
             </div>
             <div class="card-back">
               <h1>Bolos castellanos</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>Esta peculiar versión de los bolos conserva los fundamentos de sus respectivos pero añade un giro especial, el objeto a arrojar no será una bola, si no un disco grueso hecho de madera. El objetivo del juego será el mismo que el resto de bolos aquí expuestos, derribar los bolos a distancia. La puntuación se decidirá de igual manera, será premiado aquel que tire más bolos.</p>
             </div>
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('calva')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/calva.jpg"/>
             </div>
             <div class="card-back">
               <h1>La calva</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>Debe su nombre a los calveros, terrenos libres de piedras y maleza aptos para el juego. Consiste en lanzar un gorrón a la calva, que tiene forma de ángulo obtuso y se pone de pie sobre la arena. Se puede jugar en equipos de tres o de forma individual. <p>Cada jugador tiene un total de 25 tiradas y se considera tanto cada vez que el gorrón derriba a la calva, sin tocar el suelo.</p>
+              <p>Gana el equipo que anote más tantos. La liga nacional de Calva impulsada por la Junta de Castilla y León da la oportunidad de disfrutar de este juego.</p>
             </div>
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('llave')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/llave.jpg"/>
             </div>
             <div class="card-back">
               <h1>La llave</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>Juego de lanzamiento de precisión, dónde equipos de entre 4 y 6 miembros lanzarán unas monedas de metal llamadas 'pellos' con el objetivo de acertar a la llave. Lo cual aportará puntos al equipo, el número de puntos variará en función de la modalidad de la llave.</p>
             </div>
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('tanga')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/tanga.jpg"/>
             </div>
             <div class="card-back">
               <h1>La tanga</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>Es el juego más extendido en toda la comunidad.</p>
+              <ul>
+                <li>¿Tanga, tuta, tarusa, tanguilla, chito, petisa, tuka? Es el cilindro a derribar. </li>
+                  <li>¿Chapa? Pieza colocada sobre la tanga. </li>
+                  <li>¿Doblón, tostón, chocón, pieza, tejo? Es la pieza con la que se derriba la tanga. </li>
+                  <li>¿Formas de lanzamiento? Parado o en movimiento.</li>
+                <li>¿Distancia aproximada de lanzamiento? 20 metros </li>
+                <li>¿Número de tostones por jugador y tirada? 2. </li>
+                <li>¿Número de lanzamientos por partida? 32. </li>
+              </ul>
             </div>
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('rana')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/rana.jpg"/>
             </div>
             <div class="card-back">
               <h1>La rana</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>Dice la leyenda que reyes y nobles de Egipto y Mesopotamia ya jugaban al juego de la rana. Estos pedían un deseo antes de lanzar monedas de oro a los estanques con la esperanza de que si una rana o un sapo se las tragaba, el deseo se cumpliría. El juego de la rana, tal y como lo conocemos en la actualidad, 
+                consiste en introducir un disco de hierro (petaco) desde la línea de tiro a cualquiera de los agujeros de la mesa de la rana. Se puede jugar individualmente o por parejas. Las partidas se juegan a diez tiradas y, en cada una de ellas, cada jugador tiene que lanzar 10 petacos. La puntuación depende del agujero donde se introduzca el petaco.
+                </p>
             </div>
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('billar')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/billar.jpg"/>
@@ -173,18 +160,102 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openGameDetails('troncos')">
           <div class="card-inner">
             <div class="card-front">
               <img src="./Img/troncos.jpg"/>
             </div>
             <div class="card-back">
               <h1>Corta de Troncos</h1>
-              <h2>Info</h2>
-              <p>Descripción</p>
-              <p>Normas</p>
+              <p>
+                Es un deporte tradicional de zonas de explotación maderera cuyo origen se sitúa en la comarca de Pinares, entre Burgos y Soria. Consiste en el corte de lotes de madera de indeterminadas medidas en el menor tiempo posible. La herramienta homologada para ello es el hacha. Se juega individualmente o por parejas. Cada cortador puede empezar por cualquier tronco de su fila y no es obligatorio seguir un orden.
+                Existen dos posiciones de los troncos: vertical (solo está permitido un corte) y estilo australiano (horizontal de manera que cada cortador pueda darle un corte). 
+              </p>
             </div>
           </div>
+        </div>
+
+        <div class="card" onclick="openGameDetails('boloFemenino')">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/boloFemeninoAbades.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Bolo femenino de Abades</h1>
+              <p>Modalidad del juego de los bolos, practicado en su origen exclusivamente por las mujeres de la localidad de Abades en Segovia.</p>
+              <p>El juego completo está compuesto por 8 bolos, el bolo Miche o Gerardo, 2 bolas y 2 bolos de lanzar. </p>
+              <p> bolos se colocan en cuatro posiciones diferentes que corresponden con cada jugada: en forma de cuadrado, rombo, triángulo y línea recta. En todas ellas (excepto en la forma de triángulo) el Miche se coloca en el centro. La mayor puntuación se obtiene al derribar este en la posición de triángulo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" onclick="openGameDetails('boloPalentino')">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/boloPalentino.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Bolo Palentino</h1>
+              <p>Modalidad típica de la provincia de Palencia. Existen dos modalidades de juego, cuyo reglamento se recoge en el libro "Reglamentos Deportes Autóctonos" editado por la Junta de Castilla y León. Las diferencias de modalidades tienen que ver con la disposición del terreno de juego, que en cualquier caso tiene unas medidas de 26 metros de largo y 5 metros de ancho.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" onclick="openGameDetails('boloRib')">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/boloRib.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Bolo Ribereño</h1>
+              <p>
+                Al igual que el Bolo femenino de Abades, es una modalidad practicada exclusivamente por mujeres en las comarcas de la zona de la Ribera del Duero. Se juega con nueve bolos, que se colocan en forma de cuadrado, en tres filas de tres bolos cada una. Las tiradas se efectúan desde dos puntos diferentes: 20 metros (línea 1) y 5 metros (línea 2).
+                El valor de los bolos derribados desde la línea 1 es de 4 puntos, mientras que el valor de los derribados desde la línea 2 es de 1 punto. Se compite por parejas y cada componente realiza un lanzamiento desde cada línea en cada turno.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" onclick="openGameDetails('tresTablones')">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Img/tresTablones.jpg"/>
+            </div>
+            <div class="card-back">
+              <h1>Bolo tres tablones</h1>
+              <p>
+                Tiene su origen en la comarca de las Merindades, provincia de Burgos. El juegabolos o campo de juego se divide en tres zonas: zona de tiro, zona de cureñas y zona de birle. Se emplean tres tablones sobre los que se plantan tres bolos en cada uno; después se planta el mico, por detrás de los de los bolos centrales.
+                Se realizan dos tiradas, una de subida (desde el cas) y otra de bajada ( birle). Consiste en lanzar la bola desde el cas intentando derribar el mayor numero de bolos posibles y el mico inclusive. El primer bote de la bola debe caer en la cureña; en otro caso se produce una morra y se anula la tirada.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="game-overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeGameDetails()">&times;</a>
+      <div id="game-overlay-content">
+      </div>
+    </div>
+
+    <div id="trees"> 
+      <div id="trees_intro">
+        <h1>Árboles singulares</h1>
+      </div>
+      <div id="list">
+        <div class="container">
+          <h1 class="especie">Cedrus atlantica</h1>
+          <p class="ubicationes">Segovia, otro sitio...</p>
+          <p class="singularidad">Es un árbol que se encuentra en tal y tiene tal</p>
+          <img src="./Img/cedrusatlantica.jpg">
+        </div>
+
+        <div class="container">
+          <h1 class="especie">Cedrus atlantica</h1>
+          <p class="ubicationes">Segovia, otro sitio...</p>
+          <p class="singularidad">Es un árbol que se encuentra en tal y tiene tal</p>
+          <img src="./Img/cedrusatlantica.jpg">
         </div>
       </div>
     </div>
@@ -217,5 +288,85 @@
     <script src="./Datos/prismaticos.png"></script>
     <script src="./Datos/landscape-7264427.svg"></script>    
     <script type="text/javascript" src="mapa.js"></script>
+
+    <script>
+      let games_info = [
+        {
+          "id":"barra",
+          "html":"./Games/barra.html"
+        },
+        {
+          "id":"bolos",
+          "html":"./Games/bolos.html"
+        },
+        {
+          "id":"llave",
+          "html":"./Games/llave.html"
+        },
+        {
+          "id":"calva",
+          "html":"./Games/calva.html"
+        },
+        {
+          "id":"tanga",
+          "html":"./Games/tanga.html"
+        },
+        {
+          "id":"rana",
+          "html":"./Games/rana.html"
+        },
+        {
+          "id":"billar",
+          "html":"./Games/billar.html"
+        },
+        {
+          "id":"troncos",
+          "html":"./Games/troncos.html"
+        },
+        {
+          "id":"boloFemenino",
+          "html":"./Games/boloFemenino.html"
+        },
+        {
+          "id":"boloPalentino",
+          "html":"./Games/boloPalentino.html"
+        },
+        {
+          "id":"boloRib",
+          "html":"./Games/boloRib.html"
+        },
+        {
+          "id":"tresTablones",
+          "html":"./Games/tresTablones.html"
+        }
+      ]
+      function openGameDetails(name) {
+        document.getElementById("game-overlay").style.height = "100%";
+        clearOVerlay();
+        document.getElementById("game-overlay-content");
+        let game = games_info.find(game => game.id === name);
+        /*document.getElementById("game-overlay-content").innerHTML += game.html;*/
+        $("#game-overlay-content").load(game.html);
+      }
+
+      function closeGameDetails() {
+        document.getElementById("game-overlay").style.height = "0%";
+      } 
+
+      function clearOVerlay(){
+        let view = document.getElementById("game-overlay-content");
+        var element = view.getElementsByTagName('p');
+        var counter = 0; //nunca cambia
+        while(element.length){
+          element[counter].parentNode.removeChild(element[counter]);
+        }
+        element = view.getElementsByTagName('h1');
+        var counter = 0; //nunca cambia
+        while(element.length){
+          element[counter].parentNode.removeChild(element[counter]);
+        }
+      }
+    </script>
   </body>
+
 </html>
