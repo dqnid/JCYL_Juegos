@@ -23,11 +23,12 @@
 
   <body>
     <div id="navbar">
-      <a onClick="window.scrollTo(0, 0);" id="title_navbar"><b>Disfruta Castilla y León</a>
+      <a id="title_navbar"><b>Disfruta Castilla y León</a>
       <!-- ¿Añadir logo? -->
       <div id="navMenu">
         <a id="trees_btn" href="#trees">Árboles</a>
         <a id="games_btn" href="#games">Juegos</a>
+        <a id="places_btn">Espacios Naturales</a>
       </div>
     </div> 
 
@@ -36,10 +37,11 @@
       <div id="intro">
         <h1>Descubre Castilla y León</h1>
         <p>Con sus nueve provincias, Castilla y León es la provincia más extensa de toda España. Cada una de ellas nutrida por sus parajes y tradiciones, y son estos rincones y el folclore que los acompaña lo que tratamos de dar a conocer.</p>
-        <p>Usa nuestro mapa interactivo para descubrir los mejores <a href="#"><span class="textSpand">espacios naturales</span></a> dónde disfrutar de nuestro terreno.</p>
+        <p>Usa nuestro mapa interactivo para descubrir los mejores <a id="mapAnimBtn"><span class="textSpand">espacios naturales</span></a> dónde disfrutar de nuestro terreno. Selecciona en el los miradores o espacios marcados para obtener información y un enlace a su localización.</p>
+        <p>Usa nuestro localizador de coordenadas geográficas para explorar el mapa con precisión, símplemente arrastra el icono hacia la ubicación deseada.</p>
         <p>Explora los <a href="#games"><span class="textSpand">juegos tradicionales</span></a> de nuestras regiones.</p>
         <p>Aprende sobre los <a href="#trees"><span class="textSpand">árboles singulares</span></a> que pueblan estas tierras.</p>
-        <p>Usa nuestro localizador de coordenadas geográficas para explorar el mapa con precisión, símplemente arrastra el icono hacia la ubicación deseada.</p>
+
       </div>
       <div id="mapa">
         <div id="map"></div>
@@ -403,6 +405,9 @@
         while(element.length){
           element[counter].parentNode.removeChild(element[counter]);
         }
+      }
+      function runMapAnim(){
+        getElementById("mapa").style.animation = "mapWarn 2s ease-in-out"
       }
     </script>
   </body>

@@ -190,12 +190,14 @@ document.getElementById('arboles').addEventListener('click', function() {
 /////////////////AGREGAR MIRADORES
 
 function popup_miradores(feature,layer){
-    const p = feature.properties
-    p.title = p.paraje|| p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title'
+    const p = feature.properties;
+    p.title = p.paraje|| p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title';
     if(feature.properties && feature.properties.equip_b_no){
+        let gmapsRef = "https://www.google.com/maps/@" + feature.geometry.coordinates[1] + "," + feature.geometry.coordinates[0] + ",15z";
        layer.bindPopup("<strong>Nombre: </strong>"+ feature.properties.equip_b_no+'<br>'+
        "<strong>Acceso: </strong>"+ feature.properties.equip_b_ac+'<br>'+
-       "<strong>Mirador: </strong>"+feature.properties.mirador_en);
+       "<strong>Mirador: </strong>"+feature.properties.mirador_en  + '<br>' + 
+       "<a href='"+ gmapsRef +"' target='_blank'>Abrir en Google Maps</a>");
     }
 }
 
@@ -277,8 +279,9 @@ marcador_coord.on('drag', function(event){
     let location = marcador_coord.getLatLng();
     let lat = location.lat;
     let lon = location.lng;
+    let gmapsRef = "https://www.google.com/maps/@" + lat + "," + lon + ",15z";
     addToTextBox(lat,lon);
-    marcador_coord.bindPopup("<b>"+marcador_coord.getLatLng()+"</b>").openPopup();
+    marcador_coord.bindPopup("<a href='"+gmapsRef+"' target='_blank'>Abrir en maps</a><b>"+ "  ( " + lat.toFixed(5)+ ", " + lon.toFixed(5) + ")" +"</b>").openPopup();
 });
 /////////////////AGREGAR ZONAS RECREATIVAS
 
@@ -286,8 +289,11 @@ function popup_zona_recreativa(feature,layer){
     const p = feature.properties
     p.title = p.paraje|| p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title'
     if(feature.properties && feature.properties.equip_b_nombre){
+        let gmapsRef = "https://www.google.com/maps/@" + feature.geometry.coordinates[1] + "," + feature.geometry.coordinates[0] + ",15z";
+
        layer.bindPopup("<strong>Nombre: </strong>"+ feature.properties.equip_b_nombre+'<br>'+
-       "<strong>Acceso: </strong>"+ feature.properties.equip_b_acceso_modo);
+       "<strong>Acceso: </strong>"+ feature.properties.equip_b_acceso_modo  + '<br>' + 
+       "<a href='"+ gmapsRef +"' target='_blank'>Abrir en Google Maps</a>");
     }
 }
 
