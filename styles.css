@@ -224,7 +224,6 @@ bordeR-radius: 5px;
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: inherit;
 }
 .card:hover .card-inner {
@@ -242,6 +241,7 @@ bordeR-radius: 5px;
   background-color: #bbb;
   color: black;
   border-radius: inherit;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .card-front img{
@@ -257,6 +257,8 @@ bordeR-radius: 5px;
   transform: rotateY(180deg);
   border-radius: inherit;
   text-align: justify;
+  border: 2px dashed black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .card-back h1{
@@ -327,30 +329,49 @@ bordeR-radius: 5px;
 #trees_list{
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.tree_group{
+  display: flex;
+  width: 100%;
 }
 
 .tree_container{
-  padding: 20px;
-  width: 80%;
-  background-color: rgb(20, 5, 5);
-  transition: transform .2s;
-  border-radius: 15px;
-  margin: 0 auto;
-  display: grid;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  flex: 0.1;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.5s ease-in;
 }
 
-.tree_container:hover {
-  transform: scale(1.2);
+.tree_container h1{
+  opacity: 0;
+  transition: opacity 0.1s ease-in 0.2s;
 }
 
-.tree_container img{
-  grid-row-start: 1;
-  grid-row-end: 4;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  height: 500;
-  width: 400;
+.tree_container p{
+  opacity: 0;
+  transition: opacity 0.2s ease-in 0.3s;
+}
+
+.tree_container.active{
+  flex:5;
+}
+.tree_container.active h1 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.tree_container.active p {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
 }
 
 /**

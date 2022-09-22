@@ -7,3 +7,18 @@ function scrollFunction() {
     document.getElementById("navbar").style.padding = "40px 0px";
   }
 } 
+
+const panels = document.querySelectorAll('.tree_container')
+
+panels.forEach((panel) => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active')
+    })
+}
