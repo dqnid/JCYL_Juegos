@@ -260,7 +260,7 @@ var myIcon_coords = L.icon({
     shadowAnchor: [25, 25]
 });
 
-var marcador_coord = L.marker([42.508552, -7.805786],{
+var marcador_coord = L.marker([41.10836, -3.191558],{
     icon: myIcon_coords,
     draggable: true,
     autoPan: true
