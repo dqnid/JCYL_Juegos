@@ -324,11 +324,13 @@ bordeR-radius: 5px;
   border-radius: 0px 30px 0px 30px;
 }
 
-#list{
+#trees_list{
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.container{
+.tree_container{
   padding: 20px;
   width: 80%;
   background-color: rgb(20, 5, 5);
@@ -338,11 +340,11 @@ bordeR-radius: 5px;
   display: grid;
 }
 
-.container:hover {
+.tree_container:hover {
   transform: scale(1.2);
 }
 
-.container img{
+.tree_container img{
   grid-row-start: 1;
   grid-row-end: 4;
   grid-column-start: 2;
