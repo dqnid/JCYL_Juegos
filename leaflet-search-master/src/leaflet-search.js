@@ -90,9 +90,9 @@ L.Control.Search = L.Control.extend({
 			icon: false,				//custom L.Icon for maker location or false for hide
 			animate: true,				//animate a circle over location found
 			circle: {					//draw a circle in location found
-				radius: 10,
-				weight: 3,
-				color: '#e03',
+				radius: 20,
+				weight: 5,
+				color: '#03045e',
 				stroke: true,
 				fill: false
 			}
@@ -913,9 +913,9 @@ L.Control.Search.Marker = L.Marker.extend({
 		icon: new L.Icon.Default(),
 		animate: true,
 		circle: {
-			radius: 10,
-			weight: 3,
-			color: '#e03',
+			radius: 20,
+			weight: 5,
+			color: '#03045e',
 			stroke: true,
 			fill: false
 		}
@@ -970,8 +970,8 @@ L.Control.Search.Marker = L.Marker.extend({
 		if(this._circleLoc)
 		{
 			var circle = this._circleLoc,
-				tInt = 200,	//time interval
-				ss = 5,	//frames
+				tInt = 66,	//time interval
+				ss = 15,	//frames
 				mr = parseInt(circle._radius/ss),
 				oldrad = this.options.circle.radius,
 				newrad = circle._radius * 2,
