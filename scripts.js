@@ -1,5 +1,30 @@
 window.onscroll = function() {scrollFunction()};
+window.onload = function(){
+  var btn = document.getElementById('mapAnimBtn');
+  btn.onclick = function(event){
+    window.scrollTo(0, 0);
+      var mapa = document.getElementById("mapa");
+      mapa.children[0].classList.add('animated');
+      setTimeout(function(){
+        mapa.children[0].classList.remove('animated');
+      }, 1000);
+  }
 
+  var logo = document.getElementById("title_navbar");
+  logo.onclick = function(event){
+    window.scrollTo(0, 0);
+  }
+
+  document.getElementById("places_btn").onclick = function(event){
+    window.scrollTo(0, 0);
+    var mapa = document.getElementById("mapa");
+    setTimeout(function(){
+      mapa.children[0].classList.add('animated');
+      setTimeout(function(){
+        mapa.children[0].classList.remove('animated');
+      }, 1000);},500)
+  }  
+}
 function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     document.getElementById("navbar").style.padding = "15px 0px";
@@ -7,3 +32,18 @@ function scrollFunction() {
     document.getElementById("navbar").style.padding = "40px 0px";
   }
 } 
+
+const panels = document.querySelectorAll('.tree_container')
+
+panels.forEach((panel) => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active')
+    })
+}
