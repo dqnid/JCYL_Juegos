@@ -327,14 +327,100 @@ bordeR-radius: 5px;
   right: 45px;
   font-size: 80px;
 }
+#game-overlay .container{
+  position: relative;
+    height: 260px;
+    width: auto; 
+    
+    /*top: 20px;*/
+    /*margin-left: auto;*/
+    display: flex;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+    /*left: auto;*/
+    align-content: center;
+    text-align: center;
+}
+
+#game-overlay .card{
+  display: flex;
+  
+  width: 200px;
+  height: 240px;
+
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem rgb(5, 8, 1);
+  /*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  
+  
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
+  overflow: hidden;
+}
+
+#game-overlay .container .card h3{
+  color: #181420;
+  font-weight: normal;
+  font-size: 18px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
+
+#game-overlay h2 {
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+} 
+#game-overlay .title {
+  color: rgb(1, 2, 8);
+  font-weight: 130;
+  position: absolute;
+  margin: 1em;
+  
+  top: 125px;
+  left: auto;
+  text-align: center;
+}
+#game-overlay .container .card img{
+  width: 200px;
+  height: 130px;
+}
+#game-overlay .card:not(:first-child) {
+    margin-left: -40px;
+}
+#game-overlay  .card:hover {
+  transform:translate3d(-40px,-40px,-200px);
+  
+  transition: 0.4s ease-out;
+}
+#game-overlay .card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
 
 /**
  * Árboles
  **/
 #trees{
-  width: 100%;
+  width: auto;
   text-align: center;
   padding-top: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 #trees_intro{
@@ -355,7 +441,7 @@ bordeR-radius: 5px;
 #trees_list{
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .tree_group{
@@ -368,11 +454,11 @@ bordeR-radius: 5px;
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
-  border-radius: 30px;
-  color: white;
+  border-radius: 15px;
+  color: black;
   cursor: pointer;
-  flex: 0.1;
-  margin: 10px;
+  flex: 0.5;
+  margin: 5px;
   position: relative;
   transition: flex 0.5s ease-in;
 }
@@ -388,7 +474,7 @@ bordeR-radius: 5px;
 }
 
 .tree_container.active{
-  flex:5;
+  flex:7;
 }
 .tree_container.active h1 {
   opacity: 1;
