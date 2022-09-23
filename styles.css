@@ -332,9 +332,11 @@ bordeR-radius: 5px;
  * Árboles
  **/
 #trees{
-  width: 100%;
+  width: auto;
   text-align: center;
   padding-top: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 #trees_intro{
@@ -355,7 +357,7 @@ bordeR-radius: 5px;
 #trees_list{
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .tree_group{
@@ -368,11 +370,11 @@ bordeR-radius: 5px;
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
-  border-radius: 30px;
-  color: white;
+  border-radius: 15px;
+  color: black;
   cursor: pointer;
-  flex: 0.1;
-  margin: 10px;
+  flex: 0.5;
+  margin: 5px;
   position: relative;
   transition: flex 0.5s ease-in;
 }
@@ -388,7 +390,7 @@ bordeR-radius: 5px;
 }
 
 .tree_container.active{
-  flex:5;
+  flex:7;
 }
 .tree_container.active h1 {
   opacity: 1;
