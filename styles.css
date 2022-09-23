@@ -282,9 +282,12 @@ bordeR-radius: 5px;
   background-color: white;
   transform: rotateY(180deg);
   border-radius: inherit;
-  text-align: justify;
+  text-align: center;
   border: 2px dashed black;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height : 25px; /*esto es para el interlineado*/
+  
 }
 
 .card-back h1{
@@ -292,13 +295,14 @@ bordeR-radius: 5px;
 }
 
 .card-back p{
-  font-size: 16;
+  padding: 0em 1em 1em 1em;
+  font-size: 14px;
 }
 
 /**
  * Overlay de juegos
  **/
-#game-overlay {
+ #game-overlay {
   height: 0;
   width: 100%;
   position: fixed;
@@ -312,9 +316,9 @@ bordeR-radius: 5px;
   z-index: 100;
 }
 
-#game-overlay-content {
+ #game-overlay-content {
   position: relative;
-  top: 25%; /* 25% from the top */
+  top: 10%; /* 25% from the top */
   width: 100%; /* 100% width */
   text-align: center; /* Centered text/links */
   margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
@@ -327,6 +331,7 @@ bordeR-radius: 5px;
   right: 45px;
   font-size: 80px;
 }
+
 #game-overlay .container{
   position: relative;
     height: 260px;
