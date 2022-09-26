@@ -96,7 +96,7 @@ cylprovinciasJS = L.geoJson(cyl_juegos,{
     style: style   
 }).addTo(map);
 
-map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https://datosabiertos.jcyl.es/">JCYL&nbsp;&nbsp;</a>');
+map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https://datosabiertos.jcyl.es/" target="_blank">JCYL&nbsp;&nbsp;</a>');
 
 var botonesControl_cyl_provincias = L.control({position: 'topright'}); // creación del contenedor de botones
 botonesControl_cyl_provincias.onAdd = function() {                     // creación de los botones
