@@ -10,7 +10,7 @@ window.onload = function(){
       }, 1000);
   }
 
-  var logo = document.getElementById("title_navbar");
+  var logo = document.getElementById("logo");
   logo.onclick = function(event){
     window.scrollTo(0, 0);
   }
