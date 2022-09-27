@@ -24,6 +24,16 @@ window.onload = function(){
         mapa.children[0].classList.remove('animated');
       }, 1000);},500)
   }  
+
+  document.getElementById("open_nav").onclick = function(event){
+    document.getElementById("sideNav").style.width = "300px";
+    document.getElementById("main").style.marginRight = "300px";
+  }
+
+  document.getElementById("close_nav").onclick = function(event){
+    document.getElementById("sideNav").style.width = "0px";
+    document.getElementById("main").style.marginRight = "0px";
+  }
 }
 function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {

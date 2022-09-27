@@ -98,6 +98,10 @@ hr{
   color: white;
 }
 
+#navMenu_side{
+  display: none;
+}
+
 #content{
   height: 100%;
   width: 100%;
