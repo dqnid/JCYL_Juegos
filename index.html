@@ -15,33 +15,50 @@
     <!-- JQuery -->
     <script src="jquery-3.6.1.min.js"></script>
 
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!--  -->
     <title>Disfruta Castilla y León</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" media="screen and (min-width: 900px)" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" media="screen and (max-width: 900px)" href="./styles_phone.css">
     <script src="./scripts.js" type="module"></script>
   </head>
 
   <body>
     <div id="navbar">
-      <a id="title_navbar"><b>Disfruta Castilla y León</a>
+      
+      <a id="title_navbar"><img id="logo" src="./Img/RANA/logo2.png" width="200" height="100" onmouseover='src="./Img/RANA/logo2.gif"' onmouseout='src="./Img/RANA/logo2.png"' alt="Logo de la página: play4cyl"></a>
       <!-- ¿Añadir logo? -->
       <div id="navMenu">
-        <a id="trees_btn" href="#trees">Árboles</a>
         <a id="games_btn" href="#games">Juegos</a>
         <a id="places_btn">Espacios Naturales</a>
+        <a id="trees_btn" href="#trees">Árboles</a>
+
       </div>
     </div> 
 
     <div id="content">
       <div id="top_separator"></div>
       <div id="intro">
-        <h1>Disfruta Castilla y León</h1>
+        <h1>Jugando por Castilla y León</h1>
         <p>Con sus nueve provincias, Castilla y León es la provincia más extensa de toda España. Cada una de ellas nutrida por sus parajes y tradiciones, y son estos rincones y el folclore que los acompaña lo que tratamos de dar a conocer.</p>
         <p>Usa nuestro mapa interactivo para descubrir los mejores <a id="mapAnimBtn"><span class="textSpand">espacios naturales</span></a> dónde disfrutar de nuestro terreno. Selecciona en el los miradores o espacios marcados para obtener información y un enlace a su localización.</p>
         <p>Usa nuestro localizador de coordenadas geográficas para explorar el mapa con precisión, símplemente arrastra el icono hacia la ubicación deseada.</p>
         <p>Explora los <a href="#games"><span class="textSpand">juegos tradicionales</span></a> de nuestras regiones.</p>
         <p>Aprende sobre los <a href="#trees"><span class="textSpand">árboles singulares</span></a> que pueblan estas tierras.</p>
+        <h2>ENLACES DE INTERÉS</h2>
+        <p>¿Sabías que existe un reglamento unificado de los juegos tradicionales de Castilla y León? </p>
 
+        <div id="vinc"><a href="https://www.deportesautoctonoscyl.es/wp-content/uploads/2016/03/LIBRO-DEPORTES-AUTOCTONOS-CYL-web.pdf" target="_blank"
+                onmouseover="javascript: void(document.getElementById('vinc').style.fontSize='1.25em')"
+                onmouseout="javascript: void(document.getElementById('vinc').style.fontSize='1em')"> Federación de
+                Deportes Autóctonos de Castilla y León</a></div>
+        <p>¿Sabías que puedes competir de forma oficial? </p>
+        <div id="normativaRana"><a href="https://www.deportesautoctonoscyl.es/competiciones-senior/"
+                target="_blank"> Competiciones senior</a></div>
+                <div id="normativaRana"><a href="https://www.deportesautoctonoscyl.es/competiciones-junior/"
+                  target="_blank"> Competiciones junior</a></div>
       </div>
       <div id="mapa">
         <div id="map"></div>
@@ -61,14 +78,11 @@
               <img src="./Img/barraCastellana.jpg"/>
             </div>
             <div class="card-back">
-              <h1>Barra castellana</h1>
-              <p>El jugador deberá lanzar una barra de hierro la máxima distancia posible, deberá hacer que esta caiga de punta en suelo y efectuará el lanzamiento sin salirse de una zona marcada para este ejercicio.</p>
-              <p>Normas:</p>
-              <ul>
-                <li>El terreno deberá ser de tierra o ceniza.</li>
-                <li>La barra será de hierro, con forma cilíndrica y terminará en punta.</li>
-                <li>El lanzamiento se podrá hacer acorde con varias técnicas.</li>
-              </ul>
+              <h1>Barra castellana <a href="https://www.deportesautoctonoscyl.es/barra/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
+                height="15" ></a></h1>
+              <p>Es uno de los deportes que más esfuerzo y entrenamiento requieren. Gracias a las personas de los pueblos de Castilla y León se han conseguido conservar las particularidades de la modalidad en nuestra región. El objetivo es claro: lanzar una barra metálica lo más lejos posible. Para ello, existen dos modalidades de tiro: "a pecho" o "a piernas". 
+                El lanzamiento se realiza, sin coger carrerilla, desde el pate (sin sobrepasarlo) y la única ayuda permitida es la utilización de alguna sustancia que favorezca el agarre a la barra. Fue deporte de exhibición en la Olimpiada Cultural de Barcelona 92.  </p>
+             
             </div>
           </div>
         </div>
@@ -91,9 +105,10 @@
               <img src="./Img/calva.jpg"/>
             </div>
             <div class="card-back">
-              <h1>La calva</h1>
-              <p>Debe su nombre a los calveros, terrenos libres de piedras y maleza aptos para el juego. Consiste en lanzar un gorrón a la calva, que tiene forma de ángulo obtuso y se pone de pie sobre la arena. Se puede jugar en equipos de tres o de forma individual. <p>Cada jugador tiene un total de 25 tiradas y se considera tanto cada vez que el gorrón derriba a la calva, sin tocar el suelo.</p>
-              <p>Gana el equipo que anote más tantos. La liga nacional de Calva impulsada por la Junta de Castilla y León da la oportunidad de disfrutar de este juego.</p>
+              <h1>La calva <a href="https://www.deportesautoctonoscyl.es/reglamento-de-la-calva/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
+                height="15" ></a></h1>
+              <p>Debe su nombre a los calveros, terrenos libres de piedras y maleza aptos para el juego. Consiste en lanzar un gorrón a la calva, que tiene forma de ángulo obtuso y se pone de pie sobre la arena. Se puede jugar en equipos de tres o de forma individual. Cada jugador tiene un total de 25 tiradas y se considera tanto cada vez que el gorrón derriba a la calva, sin tocar el suelo.
+              Gana el equipo que anote más tantos. La liga nacional de Calva impulsada por la Junta de Castilla y León da la oportunidad de disfrutar de este juego.</p>
             </div>
           </div>
         </div>
@@ -116,7 +131,8 @@
               <img src="./Img/tanga.jpg"/>
             </div>
             <div class="card-back">
-              <h1>La tanga</h1>
+              <h1>La tanga <a href="https://www.deportesautoctonoscyl.es/reglamento-de-la-tanga/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
+                height="15" ></a></h1>
               <p>Es el juego más extendido en toda la comunidad.</p>
               <ul>
                 <li>¿Tanga, tuta, tarusa, tanguilla, chito, petisa, tuka? Es el cilindro a derribar. </li>
@@ -137,7 +153,8 @@
               <img src="./Img/rana.jpg"/>
             </div>
             <div class="card-back">
-              <h1>La rana</h1>
+              <h1>La rana <a href="https://www.deportesautoctonoscyl.es/reglamento-de-la-rana/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
+                height="15" ></a></h1>
               <p>Dice la leyenda que reyes y nobles de Egipto y Mesopotamia ya jugaban al juego de la rana. Estos pedían un deseo antes de lanzar monedas de oro a los estanques con la esperanza de que si una rana o un sapo se las tragaba, el deseo se cumpliría. El juego de la rana, tal y como lo conocemos en la actualidad, 
                 consiste en introducir un disco de hierro (petaco) desde la línea de tiro a cualquiera de los agujeros de la mesa de la rana. Se puede jugar individualmente o por parejas. Las partidas se juegan a diez tiradas y, en cada una de ellas, cada jugador tiene que lanzar 10 petacos. La puntuación depende del agujero donde se introduzca el petaco.
                 </p>
@@ -151,13 +168,11 @@
               <img src="./Img/billar.jpg"/>
             </div>
             <div class="card-back">
-              <h1>Billar Romano</h1>
-              <p>Este juego casi propio de Zamora en el que los jugadores tratarán de acercar una colección de bolas propias a una bola principal. Para ello dispondrán de una serie de lanzamientos, con los que acercar sus bolas o alejar las del rival.</p>
-              <p>Normas:</p>
-              <ul>
-                <li>El terreno de juego está hecho de barro, idealmente de mezcla con ceniza y arena tamizada.</li>
-                <li>Ganarán las bolas que estén más próximas a una común llamada <u>BILI</u>.</li>
-              </ul>
+              <h1>Billar Romano <a href="https://www.deportesautoctonoscyl.es/reglamento-del-billar-romano/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
+                height="15" ></a></h1>
+              <p>Se trata de uno de los juegos que más han calado entre los seguidores de los deportes tradicionales. De origen romano y con sede en la provincia de Zamora, consiste en acercar las bolas de tu equipo a a otra bola de menor tamaño denominada “bili” o separar las bolas del rival.
+                Se puede jugar individualmente o por parejas. Cada equipo dispone de 4 bolas que serán jugadas en cada tirada. Para ganar son necesarios 18 “tantos”.  Se considera “tanto” a cada bola del mismo color que esté más próxima al bili. El terreno de juego tiene forma octogonal y está cerrado, cualquier bola que se salga de este no se contabiliza en el juego.</p>
+             
             </div>
           </div>
         </div>
@@ -168,7 +183,8 @@
               <img src="./Img/troncos.jpg"/>
             </div>
             <div class="card-back">
-              <h1>Corta de Troncos</h1>
+              <h1>Corta de Troncos <a href="https://www.deportesautoctonoscyl.es/tronco/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
+                height="15" ></a></h1>
               <p>
                 Es un deporte tradicional de zonas de explotación maderera cuyo origen se sitúa en la comarca de Pinares, entre Burgos y Soria. Consiste en el corte de lotes de madera de indeterminadas medidas en el menor tiempo posible. La herramienta homologada para ello es el hacha. Se juega individualmente o por parejas. Cada cortador puede empezar por cualquier tronco de su fila y no es obligatorio seguir un orden.
                 Existen dos posiciones de los troncos: vertical (solo está permitido un corte) y estilo australiano (horizontal de manera que cada cortador pueda darle un corte). 
@@ -183,10 +199,11 @@
               <img src="./Img/boloFemeninoAbades.jpg"/>
             </div>
             <div class="card-back">
-              <h1>Bolo femenino de Abades</h1>
-              <p>Modalidad del juego de los bolos, practicado en su origen exclusivamente por las mujeres de la localidad de Abades en Segovia.</p>
-              <p>El juego completo está compuesto por 8 bolos, el bolo Miche o Gerardo, 2 bolas y 2 bolos de lanzar. </p>
-              <p> bolos se colocan en cuatro posiciones diferentes que corresponden con cada jugada: en forma de cuadrado, rombo, triángulo y línea recta. En todas ellas (excepto en la forma de triángulo) el Miche se coloca en el centro. La mayor puntuación se obtiene al derribar este en la posición de triángulo.</p>
+              <h1>Bolo femenino de Abades <a href="https://www.deportesautoctonoscyl.es/reglamento-bolos-femeninos-segovianos-de-abades/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego"  width="15"
+                height="15" ></a></h1>
+              <p>Modalidad del juego de los bolos, practicado en su origen exclusivamente por las mujeres de la localidad de Abades en Segovia.
+              El juego completo está compuesto por 8 bolos, el bolo Miche o Gerardo, 2 bolas y 2 bolos de lanzar. 
+               bolos se colocan en cuatro posiciones diferentes que corresponden con cada jugada: en forma de cuadrado, rombo, triángulo y línea recta. En todas ellas (excepto en la forma de triángulo) el Miche se coloca en el centro. La mayor puntuación se obtiene al derribar este en la posición de triángulo.</p>
             </div>
           </div>
         </div>
@@ -197,7 +214,8 @@
               <img src="./Img/boloPalentino.jpg"/>
             </div>
             <div class="card-back">
-              <h1>Bolo Palentino</h1>
+              <h1>Bolo Palentino <a href="https://www.deportesautoctonoscyl.es/reglamento-bolo-palentino/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
+                height="15" ></a></h1>
               <p>Modalidad típica de la provincia de Palencia. Existen dos modalidades de juego, cuyo reglamento se recoge en el libro "Reglamentos Deportes Autóctonos" editado por la Junta de Castilla y León. Las diferencias de modalidades tienen que ver con la disposición del terreno de juego, que en cualquier caso tiene unas medidas de 26 metros de largo y 5 metros de ancho.</p>
             </div>
           </div>
@@ -209,7 +227,8 @@
               <img src="./Img/boloRib.jpg"/>
             </div>
             <div class="card-back">
-              <h1>Bolo Ribereño</h1>
+              <h1>Bolo Ribereño <a href="https://www.deportesautoctonoscyl.es/reglamento-bolo-ribereno/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
+                height="15" ></a></h1>
               <p>
                 Al igual que el Bolo femenino de Abades, es una modalidad practicada exclusivamente por mujeres en las comarcas de la zona de la Ribera del Duero. Se juega con nueve bolos, que se colocan en forma de cuadrado, en tres filas de tres bolos cada una. Las tiradas se efectúan desde dos puntos diferentes: 20 metros (línea 1) y 5 metros (línea 2).
                 El valor de los bolos derribados desde la línea 1 es de 4 puntos, mientras que el valor de los derribados desde la línea 2 es de 1 punto. Se compite por parejas y cada componente realiza un lanzamiento desde cada línea en cada turno.
@@ -224,7 +243,8 @@
               <img src="./Img/tresTablones.jpg"/>
             </div>
             <div class="card-back">
-              <h1>Bolo tres tablones</h1>
+              <h1>Bolo tres tablones <a href="https://www.deportesautoctonoscyl.es/reglamento-bolo-burgales/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
+                height="15" ></a></h1>
               <p>
                 Tiene su origen en la comarca de las Merindades, provincia de Burgos. El juegabolos o campo de juego se divide en tres zonas: zona de tiro, zona de cureñas y zona de birle. Se emplean tres tablones sobre los que se plantan tres bolos en cada uno; después se planta el mico, por detrás de los de los bolos centrales.
                 Se realizan dos tiradas, una de subida (desde el cas) y otra de bajada ( birle). Consiste en lanzar la bola desde el cas intentando derribar el mayor numero de bolos posibles y el mico inclusive. El primer bote de la bola debe caer en la cureña; en otro caso se produce una morra y se anula la tirada.
@@ -236,7 +256,7 @@
     </div>
 
     <div id="game-overlay">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeGameDetails()">&times;</a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeGameDetails()"><i style="font-size: 100px;" class="material-icons">keyboard_arrow_up</i></a>
       <div id="game-overlay-content">
       </div>
     </div>
@@ -325,10 +345,6 @@
             <h1 class="especie">Tilia platyphyllos</h1>
             <p class="singularidad">Árbol de tamaño medio con una hoja grande con usos medicinales, conocida como tila, comúnmente usada para ejercer un efecto sedante.</p>
           </div>
-          <div class="tree_container" style="background-image:url('./Img/Trees/pseudotsuga.jpg')">
-            <h1 class="especie">Pseudotsuga menziesii</h1>
-            <p class="singularidad">Comúnmente llamado abeto de Douglas, originario del suroeste de Canadá y Estados Unidos.</p>
-          </div>
           <div class="tree_container" style="background-image:url('./Img/Trees/quercus.jpg')">
             <h1 class="especie">Quercus suber</h1>
             <p class="singularidad">Llamado alcornoque es un árbol originario de Europa utilizado para la extracción de corcho y famoso por su producción de bellotas.</p>
@@ -347,7 +363,7 @@
 
     <div id="bottom">
       <div class="bottomLeft">
-        <h1>Disfruta Castilla y León</h1>
+        <h1>Jugando por Castilla y León</h1>
         <p>Juegos tradicionales | Árboles singulares | Zonas recreativas</p>
       </div>
       <div class="bottomRight">
