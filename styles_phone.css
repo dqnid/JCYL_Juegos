@@ -23,7 +23,7 @@ html,body{
   overflow-x: hidden;
   transition: 0.3s;
   display: grid;
-  grid-template-rows: 2fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.4fr 0.4fr 0.4fr;
 }
 
 .sideNav a {
@@ -36,8 +36,6 @@ html,body{
 }
 
 #close_nav {
-  position: absolute;
-  top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;

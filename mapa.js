@@ -295,15 +295,16 @@ marcador_coord.on('drag', function(event){
 });
 /////////////////AGREGAR ZONAS RECREATIVAS
 
-function popup_zona_recreativa(feature,layer){
+function popup_zona_recreativa(feature, layer) {
     const p = feature.properties
-    p.title = p.paraje|| p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title'
-    if(feature.properties && feature.properties.equip_b_nombre){
+    p.title = p.paraje || p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title'
+    if (feature.properties && feature.properties.equip_b_nombre) {
         let gmapsRef = "https://www.google.com/maps/@" + feature.geometry.coordinates[1] + "," + feature.geometry.coordinates[0] + ",15z";
 
-       layer.bindPopup("<strong>Nombre: </strong>"+ feature.properties.equip_b_nombre+'<br>'+
-       "<strong>Acceso: </strong>"+ feature.properties.equip_b_acceso_modo  + '<br>' + 
-       "<a href='"+ gmapsRef +"' target='_blank'>Abrir en Google Maps</a>");
+        layer.bindPopup((feature.properties.equip_b_nombre ? "<strong>Nombre </strong>" + feature.properties.equip_b_nombre + "<br>" : '') +
+            (feature.properties.equip_b_acceso_modo ? "<strong>Acceso: </strong>" + feature.properties.equip_b_acceso_modo + "<br>" : '') +
+
+            "<a href='" + gmapsRef + "' target='_blank'>Abrir en Google Maps</a>");
     }
 }
 
