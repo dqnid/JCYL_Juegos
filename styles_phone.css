@@ -1,0 +1,703 @@
+html,body{
+  height: 100%;
+  width: auto;
+  margin: 0px;
+  padding: 0px;
+  cursor: default;
+  scroll-behavior: smooth;
+  background-color: #f5f5f5;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/**
+ * Barra lateral
+ **/
+#sideNav{
+  height: 100%;
+  width: 0;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #f8f1f1;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+.sideNav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+#close_nav {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/**
+ * Main
+ **/
+hr{
+  width: 93%;
+  text-align: center;
+  margin: auto;
+}
+
+#main {
+  transition: margin-right .5s;
+}
+
+#navbar{
+  overflow: hidden;
+  background-color: #ba283b;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  padding: 40px 0px;
+  top: 0;
+  z-index: 99;
+  vertical-align: middle;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#title_navbar{
+  font-size: 46px;
+  color: white;
+  background-color: transparent;
+  text-align: left;
+  margin-left: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 2px 4px 4px rgba(26, 26, 27, 0.6);
+}
+
+#logo{
+  transition: 0.2s;
+}
+
+#title_navbar:hover{
+  text-shadow: 5px 8px 8px rgba(42, 43, 44, 0.6);
+}
+
+#navMenu{
+  text-align: right;
+  margin-right: 20px;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align:middle;
+  display: none;
+}
+
+#navMenu a{
+  float: right;
+  color: black;
+  background-color: #EDF2F4;
+  text-align: right;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 25px;
+  border-radius: 0px 8px 0px 0px;
+  margin-left: 32px;
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align: middle;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+  transition: transform .2s;
+}
+
+#trees_btn:hover{
+  color: #ddd;
+  background-color: #2B2D42;
+  transform: scale(1.2);
+}
+
+#games_btn:hover{
+  color: #ddd;
+  background-color: #2B2D42;
+  transform: scale(1.2);
+}
+
+#places_btn:hover{
+  color: #ddd;
+  background-color: #2B2D42;
+  transform: scale(1.2);
+}
+
+#navMenu a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+#navMenu_side{
+  display: block;
+  height: auto;
+  width: auto;
+  text-align: right;
+  float: right;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 20px;
+}
+
+#content{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0.1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+#top_separator{
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#intro{
+  height: auto;
+  width: auto;
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#intro a{
+  color: #ba283b;
+}
+
+.textSpand{
+  display: inline-block;
+}
+
+a:hover .textSpand{
+  transform: scale(1.02);
+  color:rgb(3, 117, 60);
+  cursor: pointer;
+}
+
+#intro h1{
+  font-size: 48px;
+}
+
+#intro p{
+  text-align: justify;
+  font-size: 36px;
+}
+
+#mapa {
+  height: 800px;
+  width: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0px;
+  grid-row: 3;
+  grid-column: 1;
+  border: 2px solid black;
+  background-color: black;
+  border-radius: 20px 0px 20px 0px;
+  box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+@keyframes mapAnim {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -1px) rotate(-0.5deg); }
+  20% { transform: translate(-1px, 0px) rotate(0.5deg); }
+  30% { transform: translate(1px, 1px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(0.5deg); }
+  50% { transform: translate(-1px, 2px) rotate(-0.5deg); }
+  60% { transform: translate(-1px, 1px) rotate(0deg); }
+  70% { transform: translate(1px, 1px) rotate(-0.5deg); }
+  80% { transform: translate(-1px, -1px) rotate(0.5deg); }
+  90% { transform: translate(1px, 1px) rotate(0deg); }
+  100% { transform: translate(1px, -1px) rotate(-0.5deg); }
+}
+
+.animated{
+  animation-name: mapAnim;
+  animation-duration: 0.5s;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px 0px 20px 0px;
+  overflow: hidden;
+  grid-row: 1;
+  z-index: 1;
+}
+
+.info{
+padding: 6px 8px;
+font: 14px/16px Trebuchet MS;
+background: white;
+background: rgba(255,255,255,0.8);
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+bordeR-radius: 5px;
+}
+
+.info h4{
+  margin: 0 0 5px;
+  color: #777;
+}
+
+
+/**
+  * Sección de juegos
+  **/
+#games{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+#intro_games{
+  text-align: center;
+  width: auto;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgb(43, 45, 66);
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 0px 30px 0px 30px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#intro_games p{
+  font-size: 20px;
+}
+
+#cards{ 
+  display: inline-grid;
+  text-align: center;
+  width: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  row-gap: 10px;
+  column-gap: 10px;
+  width: auto;
+  grid-template-columns: 1fr;
+}
+
+.card {
+  background-color: transparent;
+  width: 440px;
+  height: 440px;
+  perspective: 1000px;
+  border-radius: 10px;
+  cursor: context-menu;
+}
+.card-inner {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  text-align:justify;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: inherit;
+}
+.card:hover .card-inner {
+  transform: rotateY(180deg) scale(1);
+  border-radius: inherit;
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: inherit;
+}
+.card-front {
+  background-color: #bbb;
+  color: black;
+  border-radius: inherit;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.card-front img{
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #edf2f4;
+  transform: rotateY(180deg);
+  border-radius: inherit;
+  text-align: justify;
+  border: 2px dashed black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height : 25px; /*esto es para el interlineado*/
+  
+}
+
+.card-back h1{
+  font-size: 20px;
+  text-align: center;
+}
+
+.card-back p{
+  padding: 0em 1em 1em 1em;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.card-back ul{
+  padding-right: 15px;
+}
+
+/**
+  * Overlay de juegos
+  **/
+  #game-overlay {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(78, 73, 73, 0.87);
+  color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 100;
+}
+
+  #game-overlay-content {
+  position: relative;
+  top: 10%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+#game-overlay .closebtn {
+  position: absolute;
+  text-decoration: none;
+  top: 20px;
+  right: 45px;
+  font-size: 80px;
+}
+
+#game-overlay .container{
+  position: relative;
+    height: 260px;
+    width: auto; 
+    
+    /*top: 20px;*/
+    /*margin-left: auto;*/
+    display: flex;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+    /*left: auto;*/
+    align-content: center;
+    text-align: center;
+}
+
+#game-overlay .card{
+  display: flex;
+  
+  width: 200px;
+  height: 240px;
+
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem rgb(5, 8, 1);
+  /*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  
+  
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
+  overflow: hidden;
+}
+
+#game-overlay .container .card h3{
+  color: #181420;
+  font-weight: normal;
+  font-size: 18px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
+
+#game-overlay h2 {
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+} 
+#game-overlay .title {
+  color: rgb(1, 2, 8);
+  font-weight: 130;
+  position: absolute;
+  margin: 1em;
+  
+  top: 125px;
+  left: auto;
+  text-align: center;
+}
+#game-overlay .container .card img{
+  width: 200px;
+  height: 130px;
+}
+#game-overlay .card:not(:first-child) {
+    margin-left: -40px;
+}
+#game-overlay  .card:hover {
+  transform:translate3d(-40px,-40px,-200px);
+  
+  transition: 0.4s ease-out;
+}
+#game-overlay .card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+/**
+  * Árboles
+  **/
+#trees{
+  width: auto;
+  text-align: center;
+  padding-top: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+
+#trees_intro{
+  width: auto;
+  text-align: center;
+  width: auto;
+  margin-bottom: 40px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgb(43, 45, 66);
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 30px 0px 30px 0px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#trees_intro p{
+  font-size: 20px;
+}
+
+#trees_list{
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.tree_group{
+  display: flex;
+  width: 100%;
+}
+
+.tree_container{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 15px;
+  color: black;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 5px;
+  position: relative;
+  transition: flex 0.5s ease-in;
+}
+
+.tree_container h1{
+  opacity: 0;
+  transition: opacity 0.1s ease-in 0.2s;
+  background-color: #f5f5f5a6;
+  border-radius: 15px 15px 0px 0px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.tree_container p{
+  opacity: 0;
+  transition: opacity 0.2s ease-in 0.3s;
+  background-color: #f5f5f5a6;
+  margin-top: 0px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.tree_container.active{
+  flex:7;
+}
+.tree_container.active h1 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.tree_container.active p {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+/**
+  * Game details
+  **/
+  .game-details{
+  width: 100%;
+  max-width: 2500px;
+  height: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  margin: auto;
+  
+}
+.game-details .rana-details{
+  width: 330px;
+  height: 430px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  overflow: hidden;
+  margin: 20px;
+  text-align: center;
+  transition: all 0.25s;
+  background-color:#ffffff;
+}
+
+.game-details .rana-details:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+
+.game-details .rana-details img{
+  width: 330px;
+  height: 220px;
+}
+
+.game-details .rana-details h4{
+  font-weight:600;
+}
+
+.game-details .rana-details p{
+  padding: 0 1rem;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.game-details .rana-details a{
+  font-weight: 500;
+  text-decoration: none;
+  color: #3498db;
+}
+
+.rana-details h3 {
+  color: #443963;
+  font-weight: normal;
+  font-size: 30px;
+  font-family: Arial;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.rana-details h1 {
+  color: #269c21;
+  font-weight: normal;
+  font-size: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+.rana-details p{
+  text-align: center;
+}
+
+.rana-details a{
+  text-align: center;
+}
+
+#bottom{
+  background-color: #ba283b;
+  width: 100%;
+  height: 130px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#bottom h1{
+  color: white;
+  font-size: 24px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+#bottom p{
+  padding-top: 0px;
+  margin-top: 0px;
+  color: black;
+}
+
+#bottom h2{
+  color:#ddd;
+  font-size: 20px;
+  margin: 2px;
+  padding: 2px;
+}
+
+#bottom .bottomRight{
+  margin-right: 20px;
+  margin-left: auto;
+  text-align: right;
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align:text-bottom;
+}
+#bottom .bottomLeft{
+  margin-left: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}

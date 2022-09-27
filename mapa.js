@@ -28,8 +28,8 @@ info.onAdd = function(map){
     return this._div;
 };
 
-info.update = function(props){
-    this._div.innerHTML = '<h4>Población total (2019):</h4>'+ (props ? '<b>' + props.POB_TOTAL : '') + '<b>' +'<h4>Juego tradicional predominante:</h4>'+ 
+info.update = function (props) {
+    this._div.innerHTML = '<h4>Provincia: </h4>' + (props ? '<b>' + props.NAMEUNIT : '') + '<h4>Población total (01/01/2021):</h4>' + (props ? '<b>' + props.POB_TOTAL : '') + '<b>' + '<h4>Juego tradicional predominante:</h4>' +
     (props ? '<b>' + props.JUEGO_TRAD : 'Pasa el puntero por una provincia');
 };
 
@@ -96,7 +96,7 @@ cylprovinciasJS = L.geoJson(cyl_juegos,{
     style: style   
 }).addTo(map);
 
-map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https://datosabiertos.jcyl.es/">JCYL&nbsp;&nbsp;</a>');
+map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https://datosabiertos.jcyl.es/" target="_blank">JCYL&nbsp;&nbsp;</a>');
 
 var botonesControl_cyl_provincias = L.control({position: 'topright'}); // creación del contenedor de botones
 botonesControl_cyl_provincias.onAdd = function() {                     // creación de los botones
@@ -119,16 +119,23 @@ document.getElementById('cyl_provincias').addEventListener('click', function() {
         
 });
 ////////////////////////////CAPA ARBOLES
-function popup_arboles(feature,layer){
+function popup_arboles(feature, layer) {
     const p = feature.properties
-    p.title = p.paraje|| p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title'
+    p.title = p.paraje || p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title'
     if(feature.properties && feature.properties.especie){
-       layer.bindPopup("<strong>Especie: </strong>"+ feature.properties.especie+'<br>'+
-       "<strong>Provincia: </strong>"+  feature.properties.provincia +'<br>'+
-       "<strong>Nombre: </strong>"+ feature.properties.nombre +'<br>'+
-       "<strong>Término municipal: </strong>"+ feature.properties.t_municipa+'<br>'+
-       "<strong>Paraje: </strong>"+feature.properties.paraje);
+        let gmapsRef = "https://www.google.com/maps/@" + feature.geometry.coordinates[1] + "," + feature.geometry.coordinates[0] + ",15z";
+        layer.bindPopup((feature.properties.nombre ? "<strong>Nombre: </strong>" + feature.properties.nombre + "<br>" : '') +
+            (feature.properties.especie ? "<strong>Especie: </strong>" + feature.properties.especie + "<br>" : '') +
+            (feature.properties.paraje ? "<strong>Paraje: </strong>" + feature.properties.paraje + "<br>" : '') +
+            (feature.properties.provincia ? "<strong>Provincia: </strong>" + feature.properties.provincia + "<br>" : '') +
+            (feature.properties.t_municipa ? "<strong>Término municipal: </strong>" + feature.properties.t_municipa + "<br>" : '') +
+            (feature.properties.alt ? "<strong>Altura: </strong>" + feature.properties.alt + " metros"+ "<br>" : '') +
+            (feature.properties.dn ? "<strong>Densidad: </strong>" + feature.properties.dn + " kg/m<sup>3</sup>"+ "<br>" : '') +
+
+            "<a href='" + gmapsRef + "' target='_blank'>Abrir en Google Maps</a>");
     }
+    
+
 }
 
 var myIcon = L.icon({
@@ -167,10 +174,10 @@ var arbolesJS = L.geoJSON(arboles, {
 
 
 ////////AGREGAR BOTONES
-var botonesControl = L.control({position: 'topright'}); // creación del contenedor de botones
-botonesControl.onAdd = function() {                     // creación de los botones
+var botonesControl = L.control({ position: 'topright' }); // creación del contenedor de botones
+botonesControl.onAdd = function () {                     // creación de los botones
     var botones = L.DomUtil.create('div', 'class-css-botones');
-    botones.innerHTML = `<button id="arboles"  class="btn btn-primary"><img src="https://cdn-icons-png.flaticon.com/512/740/740934.png" height ="30" width="30" /></button>`;
+    botones.innerHTML = `<button id="arboles"  class="btn btn-primary"><img src="./Datos/arbol.png" title="Árboles singulares" alt = "Árboles singulares" height ="30" width="30" /></button>`;
     
     return botones;
 };
@@ -189,16 +196,19 @@ document.getElementById('arboles').addEventListener('click', function() {
 });
 /////////////////AGREGAR MIRADORES
 
-function popup_miradores(feature,layer){
+function popup_miradores(feature, layer) {
     const p = feature.properties;
-    p.title = p.paraje|| p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title';
-    if(feature.properties && feature.properties.equip_b_no){
+    p.title = p.paraje || p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title';
+    if (feature.properties) {
         let gmapsRef = "https://www.google.com/maps/@" + feature.geometry.coordinates[1] + "," + feature.geometry.coordinates[0] + ",15z";
-       layer.bindPopup("<strong>Nombre: </strong>"+ feature.properties.equip_b_no+'<br>'+
-       "<strong>Acceso: </strong>"+ feature.properties.equip_b_ac+'<br>'+
-       "<strong>Mirador: </strong>"+feature.properties.mirador_en  + '<br>' + 
-       "<a href='"+ gmapsRef +"' target='_blank'>Abrir en Google Maps</a>");
+        layer.bindPopup((feature.properties.equip_b_no ? "<strong>Nombre: </strong>" + feature.properties.equip_b_no + "<br>" : '') +
+            (feature.properties.equip_b_ac ? "<strong>Acceso: </strong>" + feature.properties.equip_b_ac + "<br>" : '') +
+            (feature.properties.mirador_en ? "<strong>Mirador en: </strong>" + feature.properties.mirador_en + "<br>" : '') +
+            (feature.properties.equip_a_ob ? "<strong>Característica: </strong>" + feature.properties.equip_a_ob + "<br>" : '') +
+
+            "<a href='" + gmapsRef + "' target='_blank'>Abrir en Google Maps</a>");
     }
+
 }
 
 var myIcon_miradores = L.icon({
@@ -224,10 +234,10 @@ var miradoresJS = L.geoJSON(miradores, {
     onEachFeature: popup_miradores
 }).addTo(map);
 
-var botonesControl_miradores = L.control({position: 'topright'}); // creación del contenedor de botones
-botonesControl_miradores.onAdd = function() {                     // creación de los botones
+var botonesControl_miradores = L.control({ position: 'topright' }); // creación del contenedor de botones
+botonesControl_miradores.onAdd = function () {                     // creación de los botones
     var botones_miradores = L.DomUtil.create('div', 'class-css-botones');
-    botones_miradores.innerHTML = `<button id="miradores"  class="btn btn-primary"><img src="./Datos/prismaticos.png" height ="30" width="30" /></button>`;
+    botones_miradores.innerHTML = `<button id="miradores"  class="btn btn-primary"><img src="./Datos/prismaticos.png" title="Miradores en espacios naturales" alt="Miradores en espacios naturales" height ="30" width="30" /></button>`;
     
     return botones_miradores;
 };
@@ -320,10 +330,10 @@ var zonaRecreativaJS = L.geoJSON(markers2, {
     onEachFeature: popup_zona_recreativa
 }).addTo(map);
 
-var botonesControl_zona_recreativa = L.control({position: 'topright'}); // creación del contenedor de botones
-botonesControl_zona_recreativa.onAdd = function() {                     // creación de los botones
+var botonesControl_zona_recreativa = L.control({ position: 'topright' }); // creación del contenedor de botones
+botonesControl_zona_recreativa.onAdd = function () {                     // creación de los botones
     var botones_zona_recreativa = L.DomUtil.create('div', 'class-css-botones');
-    botones_zona_recreativa.innerHTML = `<button id="zona_recreativa"  class="btn btn-primary"><img src="./Datos/parque2.png" height ="30" width="30" /></button>`;
+    botones_zona_recreativa.innerHTML = `<button id="zona_recreativa"  class="btn btn-primary"><img src="./Datos/parque2.png" title="Zonas recreativas en espacios naturales" alt="Zonas recreativas en espacios naturales" height ="30" width="30" /></button>`;
     
     return botones_zona_recreativa;
 };
@@ -347,6 +357,7 @@ const legend = L.control.Legend({
     symbolWidth: 24,
     opacity: 1,
     column: 1,
+    title: "Leyenda",
     legends: [{
         label: "Árboles singulares",
         type: "image",
