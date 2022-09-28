@@ -1,12 +1,22 @@
+@font-face {
+  font-family: "caskaydia";
+  src: url("./Fonts/Caskaydia.otf");
+}
+
+@font-face {
+  font-family: "text_font";
+  src: url("./Fonts/mononoki.ttf");
+}
+
 html,body{
   height: 100%;
-  width: auto;
+  width: 100%;
   margin: 0px;
   padding: 0px;
   cursor: default;
   scroll-behavior: smooth;
   background-color: #f5f5f5;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "caskaydia";
 }
 
 hr{
@@ -31,12 +41,12 @@ hr{
 }
 
 #title_navbar{
-  font-size: 46px;
+  font-size: 12px;
   color: white;
   background-color: transparent;
   text-align: left;
   margin-left: 200px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "caskaydia";
   text-shadow: 2px 4px 4px rgba(26, 26, 27, 0.6);
 }
 
@@ -67,7 +77,7 @@ hr{
   font-size: 30px;
   line-height: 25px;
   border-radius: 0px 8px 0px 0px;
-  margin-left: 32px;
+  margin-left: 38px;
   margin-top: auto;
   margin-bottom: auto;
   vertical-align: middle;
@@ -146,6 +156,14 @@ a:hover .textSpand{
   transform: scale(1.02);
   color:rgb(3, 117, 60);
   cursor: pointer;
+}
+
+#intro h1{
+  font-family: "caskaydia";
+}
+
+#intro h2{
+  font-family: "caskaydia";
 }
 
 #intro p{
@@ -643,7 +661,9 @@ bordeR-radius: 5px;
   background-color: #ba283b;
   height: 130px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.8fr;
+  width: 100%;
+  font-family: "hack";
 }
 
 #bottom h1{
