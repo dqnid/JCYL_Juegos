@@ -3,12 +3,13 @@ var map = L.map('map').setView([41.7544, -4.7819], 8);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
+    minZoom: 7,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 const basemaps = {
-    StreetView: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}),
-    Topography: L.tileLayer.wms('http://ows.mundialis.de/services/service?',   {layers: 'TOPO-WMS'}),
-    Places: L.tileLayer.wms('http://ows.mundialis.de/services/service?', {layers: 'OSM-Overlay-WMS'})
+    StreetView: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, minZoom: 7, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}),
+    Topography: L.tileLayer.wms('http://ows.mundialis.de/services/service?',   {maxZoom: 19, minZoom: 7, layers: 'TOPO-WMS'}),
+    Places: L.tileLayer.wms('http://ows.mundialis.de/services/service?', {maxZoom: 19, minZoom: 7, layers: 'OSM-Overlay-WMS'})
 };
 L.control.layers(basemaps).addTo(map);
 
@@ -429,3 +430,19 @@ function upDateMapConfig(){
 function centerMap(){
     map.setView([41.66585549600211, -4.460670126660962], 8);    
 }
+
+////////AGREGAR BOTON CENTRAR
+var botonesControl = L.control({ position: 'bottomleft' }); // creación del contenedor de botones
+botonesControl.onAdd = function () {                     // creación de los botones
+    var botones = L.DomUtil.create('div', 'class-css-botones');
+    botones.innerHTML = `<button id="centrar"  class="btn btn-primary"><img src="./Img/RANA/centrar.png" title="Centrar" alt = "Centrar" height ="30" width="30" /></button>`;
+    
+    return botones;
+};
+botonesControl.addTo(map);   // adición del contenedor dentro del mapa
+
+document.getElementById('centrar').addEventListener('click', function centerMap() {
+    
+    map.setView([41.7544, -4.7819], 8);    
+        
+});
