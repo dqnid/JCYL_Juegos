@@ -500,6 +500,7 @@ bordeR-radius: 5px;
 #trees_list{
   width: 100%;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
 
@@ -670,6 +671,19 @@ bordeR-radius: 5px;
   margin-left: 200px;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+#bottom img{
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 5px;
+}
+
+#bottom a{
+  color: black;
+  vertical-align: text-bottom;
+  font-size: 22px;
 }
 
 @media screen and (max-width: 1700px) {
