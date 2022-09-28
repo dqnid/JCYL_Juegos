@@ -1,12 +1,5 @@
-@font-face {
-  font-family: "caskaydia";
-  src: url("./Fonts/Caskaydia.otf");
-}
-
-@font-face {
-  font-family: "text_font";
-  src: url("./Fonts/mononoki.ttf");
-}
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
 html,body{
   height: 100%;
@@ -16,13 +9,21 @@ html,body{
   cursor: default;
   scroll-behavior: smooth;
   background-color: #f5f5f5;
-  font-family: "caskaydia";
+  font-family: 'Ubuntu Mono';
 }
 
 hr{
   width: 93%;
   text-align: center;
   margin: auto;
+}
+
+p, h2, h3{
+  font-family: "Ubuntu Mono";
+}
+
+h1{
+  font-family: "Permanent Marker";
 }
 
 #navbar{
@@ -46,7 +47,6 @@ hr{
   background-color: transparent;
   text-align: left;
   margin-left: 200px;
-  font-family: "caskaydia";
   text-shadow: 2px 4px 4px rgba(26, 26, 27, 0.6);
 }
 
@@ -65,6 +65,7 @@ hr{
   margin-top: auto;
   margin-bottom: auto;
   vertical-align:middle;
+  font-family: "Permanent Marker";
 }
 
 #navMenu a{
@@ -118,18 +119,10 @@ hr{
   margin: 0px;
   padding: 0px;
   display: grid;
-  grid-template-rows: 0.18fr 1fr;
+  vertical-align: middle;
+  grid-template-rows: 1fr;
   grid-template-columns: 0.9fr 1fr;
-}
-
-#top_separator{
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin-top: 120px;
 }
 
 #intro{
@@ -141,7 +134,6 @@ hr{
   margin-bottom: 40px;
   margin-left: 200px;
   margin-right: 50px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #intro a{
@@ -158,21 +150,13 @@ a:hover .textSpand{
   cursor: pointer;
 }
 
-#intro h1{
-  font-family: "caskaydia";
-}
-
-#intro h2{
-  font-family: "caskaydia";
-}
-
 #intro p{
   text-align: justify;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 #mapa {
-  height: auto;
+  height: 100%;
   width: auto;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -255,7 +239,6 @@ bordeR-radius: 5px;
   color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 0px 30px 0px 30px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #intro_games p{
@@ -324,7 +307,6 @@ bordeR-radius: 5px;
   text-align: justify;
   border: 2px dashed black;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height : 25px; /*esto es para el interlineado*/
   
 }
@@ -431,7 +413,6 @@ bordeR-radius: 5px;
   color: #181420;
   font-weight: normal;
   font-size: 14px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
 }
 
@@ -439,7 +420,6 @@ bordeR-radius: 5px;
   color: #000000;
   font-weight: normal;
   font-size: 30px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-transform: uppercase;
   text-align: center;
 } 
@@ -486,7 +466,6 @@ bordeR-radius: 5px;
   color: #181420;
   font-weight: normal;
   font-size: 14px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
 }
 
@@ -515,7 +494,6 @@ bordeR-radius: 5px;
   color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 30px 0px 30px 0px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #trees_intro p{
@@ -634,7 +612,6 @@ bordeR-radius: 5px;
   color: #443963;
   font-weight: normal;
   font-size: 30px;
-  font-family: Arial;
   text-transform: uppercase;
   text-align: center;
 }
@@ -643,7 +620,6 @@ bordeR-radius: 5px;
   color: #269c21;
   font-weight: normal;
   font-size: 40px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-transform: uppercase;
   text-align: center;
 }
@@ -663,7 +639,6 @@ bordeR-radius: 5px;
   display: grid;
   grid-template-columns: 1fr 0.8fr;
   width: 100%;
-  font-family: "hack";
 }
 
 #bottom h1{

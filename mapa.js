@@ -101,7 +101,7 @@ map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https
 var botonesControl_cyl_provincias = L.control({position: 'topright'}); // creación del contenedor de botones
 botonesControl_cyl_provincias.onAdd = function() {                     // creación de los botones
     var botones_cyl_provincias = L.DomUtil.create('div', 'class-css-botones');
-    botones_cyl_provincias.innerHTML = `<button id="cyl_provincias"  class="btn btn-primary"><img src="./Datos/cyl_recintos.png" height ="30" width="30" /></button>`;
+    botones_cyl_provincias.innerHTML = `<button id="cyl_provincias"  class="btn btn-primary"><img src="./Datos/cyl_recintos.png" title="Límites provinciales: recintos" alt = "Límites provinciales: recintos" height ="30" width="30" /></button>`;
     
     return botones_cyl_provincias;
 };
@@ -123,7 +123,7 @@ function popup_arboles(feature, layer) {
     const p = feature.properties
     p.title = p.paraje || p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title'
     if(feature.properties && feature.properties.especie){
-        let gmapsRef = "https://www.google.com/maps/@" + feature.geometry.coordinates[1] + "," + feature.geometry.coordinates[0] + ",15z";
+        let gmapsRef = "https://www.google.com/maps/@" + feature.geometry.coordinates[0].reverse() + ",15z";
         layer.bindPopup((feature.properties.nombre ? "<strong>Nombre: </strong>" + feature.properties.nombre + "<br>" : '') +
             (feature.properties.especie ? "<strong>Especie: </strong>" + feature.properties.especie + "<br>" : '') +
             (feature.properties.paraje ? "<strong>Paraje: </strong>" + feature.properties.paraje + "<br>" : '') +

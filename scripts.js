@@ -23,7 +23,8 @@ window.onload = function(){
       setTimeout(function(){
         mapa.children[0].classList.remove('animated');
       }, 1000);},500)
-  }  
+  }
+  document.getElementById("places_btn").style.cursor = "pointer";
 
   document.getElementById("open_nav").onclick = function(event){
     document.getElementById("sideNav").style.width = "300px";
