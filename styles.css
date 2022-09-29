@@ -256,12 +256,16 @@ bordeR-radius: 5px;
 
 .card {
   background-color: transparent;
-  width: 440px;
-  height: 440px;
   perspective: 1000px;
   border-radius: 10px;
   cursor: context-menu;
 }
+
+.card_normal{
+  width: auto;
+  height: auto;
+}
+
 .card-inner {
   position: relative;
   width: 440px;
@@ -291,7 +295,7 @@ bordeR-radius: 5px;
 
 .card-front img{
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: inherit;
 }
 
@@ -342,10 +346,10 @@ bordeR-radius: 5px;
 
  #game-overlay-content {
   position: relative;
-  top: 10%; /* 25% from the top */
-  width: 100%; /* 100% width */
-  text-align: center; /* Centered text/links */
-  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
 }
 
 #game-overlay .closebtn {
@@ -686,7 +690,63 @@ bordeR-radius: 5px;
   font-size: 22px;
 }
 
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 1800px) {
+  .card-inner{
+    height: 390px;
+    width: 390px;
+  }
+  .card-back{
+    line-height: 1.6;
+
+  }
+  .card-back h1{
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .card-back p{
+    padding: 0em 1em 1em 1em;
+    font-size: 14px;
+    line-height: 1.6;
+    vertical-align: middle;
+  }
+  
+  .card-back ul{
+    padding-right: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .card-inner{
+    height: 330px;
+    width: 330px;
+  }
+  .card-back{
+    line-height: 1.6;
+
+  }
+  .card-back h1{
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .card-back p{
+    padding: 0em 1em 1em 1em;
+    font-size: 12px;
+    line-height: 1.6;
+    vertical-align: middle;
+  }
+  
+  .card-back ul{
+    padding-right: 15px;
+    font-size: 10px;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 1500px) {
   #title_navbar{
     margin-left: 30px;
   }
@@ -702,6 +762,11 @@ bordeR-radius: 5px;
   #mapa{
     margin-right: 30px;
   }
+
+  #intro_games{
+    margin-right: 30px;
+    margin-left: 30px;
+  }
   #cards{
     margin-left: 30px;
     margin-right: 30px;
@@ -712,6 +777,34 @@ bordeR-radius: 5px;
   .card{
     perspective: 1000px;
   }
+  .card-inner{
+    height: 330px;
+    width: 330px;
+  }
+
+  .card-back{
+    line-height: 1.6;
+
+  }
+
+  .card-back h1{
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .card-back p{
+    padding: 0em 1em 1em 1em;
+    font-size: 12px;
+    line-height: 1.6;
+    vertical-align: middle;
+  }
+  
+  .card-back ul{
+    padding-right: 10px;
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
   #trees{
     margin-left: 30px;
     margin-right: 30px;

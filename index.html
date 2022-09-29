@@ -22,22 +22,14 @@
     <title>Play4CyL</title>
     <link rel="icon" type="image/x-icon" href="./Img/RANA/logo2_x.png">
     
-    <link rel="stylesheet" media="screen and (min-width: 1100px)" type="text/css" href="./styles.css" />
-    <link rel="stylesheet" media="screen and (max-width: 1100px)" href="./styles_phone.css">
+    <link rel="stylesheet" media="screen and (min-width: 1300px)" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" media="screen and (max-width: 1300px)" href="./styles_phone.css">
     <script src="./scripts.js" type="module"></script>
   </head>
 
   <body>  
-    <div id="sideNav">
-      <a id="close_nav"><i style="font-size: 40px;" class="material-icons">close</i></a>
-      <a id="games_btn_m" href="#games">Juegos</a>
-      <a id="places_btn_m" href="#main">Espacios Naturales</a>
-      <a id="trees_btn_m" href="#trees">Árboles</a>
-    </div>
-
     <div id="main">
-      <div id="navbar">
-        
+      <div id="navbar"> 
         <a id="title_navbar"><img id="logo" src="./Img/RANA/logo2.png" width="200" height="100" onmouseover='src="./Img/RANA/logo2.gif"' onmouseout='src="./Img/RANA/logo2.png"' alt="Logo de la página: play4cyl"></a>
         <div id="navMenu">
           <a id="places_btn">Espacios Naturales</a>
@@ -45,7 +37,9 @@
           <a id="trees_btn" href="#trees">Árboles</a>
         </div>
         <div id="navMenu_side">
-          <a id="open_nav"><i style="font-size: 40px;" class="material-icons">menu</i></a>
+          <a class="mobile_nav_btn" onclick="window.scrollTo(0, 0);"><i class="material-icons">map</i></a>
+          <a class="mobile_nav_btn" href="#intro_games"><i class="material-icons">directions_run</i></a>
+          <a class="mobile_nav_btn" href="#trees"><i class="material-icons">filter_hdr</i></a>
         </div>
       </div> 
 
@@ -76,7 +70,7 @@
           <p>Ponga el <span style="color:#ef233c">cursor sobre una imagen</span> para descubrir un juego tradicional. Haga <span style="color:#ef233c">clic sobre ella</span> para obtener información detallada.</p>
         </div>
         <div id="cards">
-          <div class="card" onclick="openGameDetails('barra')">
+          <div class="card card_normal" onclick="openGameDetails('barra')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/barraCastellana.jpg"/>
@@ -91,7 +85,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('lucha')">
+          <div class="card card_normal" onclick="openGameDetails('lucha')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/lucha.jpg"/>
@@ -104,7 +98,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('calva')">
+          <div class="card card_normal" onclick="openGameDetails('calva')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/calva.jpg"/>
@@ -118,7 +112,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('boloBurg')">
+          <div class="card card_normal" onclick="openGameDetails('boloBurg')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/burg.jpg"/>
@@ -131,7 +125,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('tanga')">
+          <div class="card card_normal" onclick="openGameDetails('tanga')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/tanga.jpg"/>
@@ -154,7 +148,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('rana')">
+          <div class="card card_normal" onclick="openGameDetails('rana')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/rana.jpg"/>
@@ -169,7 +163,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('billar')">
+          <div class="card card_normal" onclick="openGameDetails('billar')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/billar.jpg"/>
@@ -184,7 +178,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('troncos')">
+          <div class="card card_normal" onclick="openGameDetails('troncos')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/troncos.jpg"/>
@@ -200,7 +194,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('boloFemenino')">
+          <div class="card card_normal" onclick="openGameDetails('boloFemenino')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/boloFemeninoAbades.jpg"/>
@@ -215,7 +209,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('boloPalentino')">
+          <div class="card card_normal" onclick="openGameDetails('boloPalentino')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/boloPalentino.jpg"/>
@@ -228,7 +222,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('boloRib')">
+          <div class="card card_normal" onclick="openGameDetails('boloRib')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/boloRib.jpg"/>
@@ -244,7 +238,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('tresTablones')">
+          <div class="card card_normal" onclick="openGameDetails('tresTablones')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/tresTablones.jpg"/>
