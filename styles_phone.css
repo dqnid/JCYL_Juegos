@@ -682,9 +682,11 @@ bordeR-radius: 5px;
 #bottom{
   background-color: #ba283b;
   width: 100%;
-  height: 130px;
+  height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #bottom h1{

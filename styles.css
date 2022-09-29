@@ -637,10 +637,12 @@ bordeR-radius: 5px;
 
 #bottom{
   background-color: #ba283b;
-  height: 130px;
+  height: auto;
   display: grid;
   grid-template-columns: 1fr 0.8fr;
   width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #bottom h1{
@@ -678,9 +680,9 @@ bordeR-radius: 5px;
 }
 
 #bottom img{
-  width: 30px;
-  height: 30px;
-  float: left;
+  height: auto;
+  width: 24px;
+  vertical-align:middle;
   margin-right: 5px;
 }
 
