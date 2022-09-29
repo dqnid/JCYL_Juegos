@@ -1,18 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
 html,body{
   height: 100%;
-  width: auto;
+  width: 100%;
   margin: 0px;
   padding: 0px;
   cursor: default;
   scroll-behavior: smooth;
   background-color: #f5f5f5;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Ubuntu Mono';
 }
 
 hr{
   width: 93%;
   text-align: center;
   margin: auto;
+}
+
+p, h2, h3{
+  font-family: "Ubuntu Mono";
+}
+
+h1{
+  font-family: "Permanent Marker";
 }
 
 #navbar{
@@ -27,16 +38,15 @@ hr{
   vertical-align: middle;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.7fr 1fr;
 }
 
 #title_navbar{
-  font-size: 46px;
+  font-size: 12px;
   color: white;
   background-color: transparent;
   text-align: left;
   margin-left: 200px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
   text-shadow: 2px 4px 4px rgba(26, 26, 27, 0.6);
 }
 
@@ -55,6 +65,7 @@ hr{
   margin-top: auto;
   margin-bottom: auto;
   vertical-align:middle;
+  font-family: "Permanent Marker";
 }
 
 #navMenu a{
@@ -67,7 +78,7 @@ hr{
   font-size: 30px;
   line-height: 25px;
   border-radius: 0px 8px 0px 0px;
-  margin-left: 32px;
+  margin-left: 38px;
   margin-top: auto;
   margin-bottom: auto;
   vertical-align: middle;
@@ -108,30 +119,19 @@ hr{
   margin: 0px;
   padding: 0px;
   display: grid;
-  grid-template-rows: 0.18fr 1fr;
-  grid-template-columns: 0.9fr 1fr;
-}
-
-#top_separator{
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
+  vertical-align: middle;
+  grid-template-columns: 0.8fr 1fr;
+  margin-top: 120px;
 }
 
 #intro{
   height: auto;
   width: auto;
   grid-column: 1;
-  grid-row: 2;
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 200px;
   margin-right: 50px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #intro a{
@@ -150,18 +150,17 @@ a:hover .textSpand{
 
 #intro p{
   text-align: justify;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 #mapa {
-  height: auto;
+  height: 100%;
   width: auto;
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 20px;
   margin-right: 200px;
   padding: 0px;
-  grid-row: 2;
   grid-column: 2;
   border: 2px solid black;
   background-color: black;
@@ -219,7 +218,7 @@ bordeR-radius: 5px;
  * Sección de juegos
  **/
 #games{
-  width: 100%;
+  width: auto;
   height: auto;
   text-align: center;
   padding-top: 100px;
@@ -229,15 +228,14 @@ bordeR-radius: 5px;
   text-align: center;
   width: auto;
   margin-bottom: 40px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 195px;
+  margin-right: 195px;
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: rgb(43, 45, 66);
   color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 0px 30px 0px 30px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #intro_games p{
@@ -258,12 +256,16 @@ bordeR-radius: 5px;
 
 .card {
   background-color: transparent;
-  width: 440px;
-  height: 440px;
   perspective: 1000px;
   border-radius: 10px;
   cursor: context-menu;
 }
+
+.card_normal{
+  width: auto;
+  height: auto;
+}
+
 .card-inner {
   position: relative;
   width: 440px;
@@ -293,7 +295,7 @@ bordeR-radius: 5px;
 
 .card-front img{
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: inherit;
 }
 
@@ -306,7 +308,6 @@ bordeR-radius: 5px;
   text-align: justify;
   border: 2px dashed black;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height : 25px; /*esto es para el interlineado*/
   
 }
@@ -345,10 +346,10 @@ bordeR-radius: 5px;
 
  #game-overlay-content {
   position: relative;
-  top: 10%; /* 25% from the top */
-  width: 100%; /* 100% width */
-  text-align: center; /* Centered text/links */
-  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
 }
 
 #game-overlay .closebtn {
@@ -372,6 +373,7 @@ bordeR-radius: 5px;
   position: relative;
     height: 300px;
     width: auto; 
+    max-height: 300px;
     
     /*top: 20px;*/
     /*margin-left: auto;*/
@@ -387,7 +389,6 @@ bordeR-radius: 5px;
 
 #game-overlay .card{
   display: flex;
-  
   width: 240px;
   height: 280px;
 
@@ -413,7 +414,6 @@ bordeR-radius: 5px;
   color: #181420;
   font-weight: normal;
   font-size: 14px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
 }
 
@@ -421,7 +421,6 @@ bordeR-radius: 5px;
   color: #000000;
   font-weight: normal;
   font-size: 30px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-transform: uppercase;
   text-align: center;
 } 
@@ -431,7 +430,7 @@ bordeR-radius: 5px;
   position: absolute;
   margin: 1em;
   
-  top: 130px;
+  top: 115px;
   left: auto;
   text-align: center;
 }
@@ -441,14 +440,14 @@ bordeR-radius: 5px;
   position: absolute;
   margin: 1em;
   
-  top: 170px;
+  top: 150px;
   left: auto;
   text-align: center;
 
 }
 #game-overlay .container .card img{
   width: 240px;
-  height: 140px;
+  height: 125px;
 }
 #game-overlay .card:not(:first-child) {
     margin-left: -40px;
@@ -468,7 +467,6 @@ bordeR-radius: 5px;
   color: #181420;
   font-weight: normal;
   font-size: 14px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
 }
 
@@ -497,7 +495,6 @@ bordeR-radius: 5px;
   color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 30px 0px 30px 0px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #trees_intro p{
@@ -507,6 +504,7 @@ bordeR-radius: 5px;
 #trees_list{
   width: 100%;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
 
@@ -532,7 +530,7 @@ bordeR-radius: 5px;
 .tree_container h1{
   opacity: 0;
   transition: opacity 0.1s ease-in 0.2s;
-  background-color: #f5f5f5a6;
+  background-color: #f5f5f5bb;
   border-radius: 15px 15px 0px 0px;
   padding-top: 10px;
   margin-bottom: 0px;
@@ -542,7 +540,7 @@ bordeR-radius: 5px;
 .tree_container p{
   opacity: 0;
   transition: opacity 0.2s ease-in 0.3s;
-  background-color: #f5f5f5a6;
+  background-color: #f5f5f5bb;
   margin-top: 0px;
   padding: 10px;
   font-size: 20px;
@@ -616,7 +614,6 @@ bordeR-radius: 5px;
   color: #443963;
   font-weight: normal;
   font-size: 30px;
-  font-family: Arial;
   text-transform: uppercase;
   text-align: center;
 }
@@ -625,7 +622,6 @@ bordeR-radius: 5px;
   color: #269c21;
   font-weight: normal;
   font-size: 40px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-transform: uppercase;
   text-align: center;
 }
@@ -641,9 +637,12 @@ bordeR-radius: 5px;
 
 #bottom{
   background-color: #ba283b;
-  height: 130px;
+  height: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.8fr;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #bottom h1{
@@ -680,7 +679,76 @@ bordeR-radius: 5px;
   margin-bottom: auto;
 }
 
-@media screen and (max-width: 1700px) {
+#bottom img{
+  height: auto;
+  width: 24px;
+  vertical-align:middle;
+  margin-right: 5px;
+}
+
+#bottom a{
+  color: black;
+  vertical-align: text-bottom;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 1800px) {
+  .card-inner{
+    height: 390px;
+    width: 390px;
+  }
+  .card-back{
+    line-height: 1.6;
+
+  }
+  .card-back h1{
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .card-back p{
+    padding: 0em 1em 1em 1em;
+    font-size: 14px;
+    line-height: 1.6;
+    vertical-align: middle;
+  }
+  
+  .card-back ul{
+    padding-right: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .card-inner{
+    height: 330px;
+    width: 330px;
+  }
+  .card-back{
+    line-height: 1.6;
+
+  }
+  .card-back h1{
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .card-back p{
+    padding: 0em 1em 1em 1em;
+    font-size: 12px;
+    line-height: 1.6;
+    vertical-align: middle;
+  }
+  
+  .card-back ul{
+    padding-right: 15px;
+    font-size: 10px;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 1500px) {
   #title_navbar{
     margin-left: 30px;
   }
@@ -696,6 +764,11 @@ bordeR-radius: 5px;
   #mapa{
     margin-right: 30px;
   }
+
+  #intro_games{
+    margin-right: 30px;
+    margin-left: 30px;
+  }
   #cards{
     margin-left: 30px;
     margin-right: 30px;
@@ -706,6 +779,34 @@ bordeR-radius: 5px;
   .card{
     perspective: 1000px;
   }
+  .card-inner{
+    height: 330px;
+    width: 330px;
+  }
+
+  .card-back{
+    line-height: 1.6;
+
+  }
+
+  .card-back h1{
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .card-back p{
+    padding: 0em 1em 1em 1em;
+    font-size: 12px;
+    line-height: 1.6;
+    vertical-align: middle;
+  }
+  
+  .card-back ul{
+    padding-right: 10px;
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
   #trees{
     margin-left: 30px;
     margin-right: 30px;

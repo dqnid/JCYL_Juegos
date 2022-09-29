@@ -10,7 +10,7 @@ window.onload = function(){
       }, 1000);
   }
 
-  var logo = document.getElementById("title_navbar");
+  var logo = document.getElementById("logo");
   logo.onclick = function(event){
     window.scrollTo(0, 0);
   }
@@ -23,18 +23,10 @@ window.onload = function(){
       setTimeout(function(){
         mapa.children[0].classList.remove('animated');
       }, 1000);},500)
-  }  
-
-  document.getElementById("open_nav").onclick = function(event){
-    document.getElementById("sideNav").style.width = "300px";
-    document.getElementById("main").style.marginRight = "300px";
   }
-
-  document.getElementById("close_nav").onclick = function(event){
-    document.getElementById("sideNav").style.width = "0px";
-    document.getElementById("main").style.marginRight = "0px";
-  }
+  document.getElementById("places_btn").style.cursor = "pointer";
 }
+
 function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     document.getElementById("navbar").style.padding = "10px 0px";

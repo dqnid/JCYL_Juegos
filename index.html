@@ -19,56 +19,52 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!--  -->
-    <title>Disfruta Castilla y León</title>
-    <link rel="stylesheet" media="screen and (min-width: 1100px)" type="text/css" href="./styles.css" />
-    <link rel="stylesheet" media="screen and (max-width: 1100px)" href="./styles_phone.css">
+    <title>Play4CyL</title>
+    <link rel="icon" type="image/x-icon" href="./Img/RANA/logo2_x.png">
+    
+    <link rel="stylesheet" media="screen and (min-width: 1300px)" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" media="screen and (max-width: 1300px)" href="./styles_phone.css">
     <script src="./scripts.js" type="module"></script>
   </head>
 
   <body>  
-    <div id="sideNav">
-      <a id="close_nav"><i style="font-size: 40px;" class="material-icons">close</i></a>
-      <a id="games_btn" href="#games">Juegos</a>
-      <a id="places_btn">Espacios Naturales</a>
-      <a id="trees_btn" href="#trees">Árboles</a>
-    </div>
-
     <div id="main">
-      <div id="navbar">
-        
+      <div id="navbar"> 
         <a id="title_navbar"><img id="logo" src="./Img/RANA/logo2.png" width="200" height="100" onmouseover='src="./Img/RANA/logo2.gif"' onmouseout='src="./Img/RANA/logo2.png"' alt="Logo de la página: play4cyl"></a>
-        <!-- ¿Añadir logo? -->
         <div id="navMenu">
-          <a id="games_btn" href="#games">Juegos</a>
           <a id="places_btn">Espacios Naturales</a>
+          <a id="games_btn" href="#games">Juegos</a>
           <a id="trees_btn" href="#trees">Árboles</a>
         </div>
         <div id="navMenu_side">
-          <a id="open_nav"><i style="font-size: 40px;" class="material-icons">menu</i></a>
+          <a class="mobile_nav_btn" onclick="window.scrollTo(0, 0);"><i class="material-icons">map</i></a>
+          <a class="mobile_nav_btn" href="#intro_games"><i class="material-icons">directions_run</i></a>
+          <a class="mobile_nav_btn" href="#trees"><i class="material-icons">filter_hdr</i></a>
         </div>
       </div> 
 
       <div id="content">
-        <div id="top_separator"></div>
         <div id="intro">
           <h1>Jugando por Castilla y León</h1>
-          <p>Con sus nueve provincias, Castilla y León es la provincia más extensa de toda España. Cada una de ellas nutrida por sus parajes y tradiciones, y son estos rincones y el folclore que los acompaña lo que tratamos de dar a conocer.</p>
-          <p>Usa nuestro mapa interactivo para descubrir los mejores <a id="mapAnimBtn"><span class="textSpand">espacios naturales</span></a> dónde disfrutar de nuestro terreno. Selecciona en el los miradores o espacios marcados para obtener información y un enlace a su localización.</p>
-          <p>Usa nuestro localizador de coordenadas geográficas para explorar el mapa con precisión, símplemente arrastra el icono hacia la ubicación deseada.</p>
-          <p>Explora los <a href="#games"><span class="textSpand">juegos tradicionales</span></a> de nuestras regiones.</p>
-          <p>Aprende sobre los <a href="#trees"><span class="textSpand">árboles singulares</span></a> que pueblan estas tierras.</p>
-          <h2>ENLACES DE INTERÉS</h2>
-          <p>¿Sabías que existe un reglamento unificado de los juegos tradicionales de Castilla y León? </p>
-
-          <div id="vinc"><a href="https://www.deportesautoctonoscyl.es/wp-content/uploads/2016/03/LIBRO-DEPORTES-AUTOCTONOS-CYL-web.pdf" target="_blank"
-                  onmouseover="javascript: void(document.getElementById('vinc').style.fontSize='1.25em')"
-                  onmouseout="javascript: void(document.getElementById('vinc').style.fontSize='1em')"> Federación de
-                  Deportes Autóctonos de Castilla y León</a></div>
-          <p>¿Sabías que puedes competir de forma oficial? </p>
-          <div id="normativaRana"><a href="https://www.deportesautoctonoscyl.es/competiciones-senior/"
-                  target="_blank"> Competiciones senior</a></div>
-                  <div id="normativaRana"><a href="https://www.deportesautoctonoscyl.es/competiciones-junior/"
-                    target="_blank"> Competiciones junior</a></div>
+          <p>Con sus nueve provincias, Castilla y León es la comunidad autónoma más extensa de toda España. Cuenta con un patrimonio natural y cultural que presenta innumerables posibilidades.
+            Son estos rincones y la tradición que los acompaña lo que tratamos de dar a conocer.
+            </p>
+            <p>Utiliza nuestro mapa interactivo para descubrir los mejores <a id="mapAnimBtn"><span class="textSpand">espacios naturales</span></a> de nuestra región.
+              Selecciona en él los <a href="#trees"><span class="textSpand">árboles singulares</span></a>, miradores y zonas recreativas geolocalizados y descubre información detallada sobre ellos.
+              Activa y desactiva las capas y configura tu mapa a medida. </p>
+              <p>Usa nuestro localizador de coordenadas geográficas para explorar el mapa con precisión, arrastrando el icono hacia la ubicación deseada.</p>
+          
+          <p>Explora los <a href="#games"><span class="textSpand">juegos tradicionales</span></a> pasando el puntero por cada una de las provincias.</p>
+          
+          <p>¿Sabías que existe un <a href="https://www.deportesautoctonoscyl.es/wp-content/uploads/2016/03/LIBRO-DEPORTES-AUTOCTONOS-CYL-web.pdf
+            " target="_blank"><span class="textSpand">reglamento unificado</span></a> de los juegos tradicionales de Castilla y León? 
+                      ¿Sabías que puedes competir de forma oficial? Échale un vistazo a la <a href="https://www.deportesautoctonoscyl.es"
+                      target="_blank"><span class="textSpand">web</span></a> de la federación e infórmate acerca de las <a href="https://www.deportesautoctonoscyl.es/competiciones-senior/
+            " target="_blank"><span class="textSpand">competiciones senior</span></a> y las 
+                      <a href="https://www.deportesautoctonoscyl.es/competiciones-junior/
+            " target="_blank"><span class="textSpand">competiciones junior</span></a>. 
+                      </p>
+          
         </div>
         <div id="mapa">
           <div id="map"></div>
@@ -79,10 +75,10 @@
         <div id="intro_games"> 
           <h1>Juegos tradicionales</h1>
           <hr style="width:90%">
-          <p>Ponga el <u style="color:#ef233c">cursor sobre una imágen</u> para descubrir un juego tradicional. Haga <u style="color:#ef233c">clic sobre ella</u> para obtener información detallada.</p>
+          <p>Ponga el <span style="color:#ef233c">cursor sobre una imagen</span> para descubrir un juego tradicional. Haga <span style="color:#ef233c">clic sobre ella</span> para obtener información detallada.</p>
         </div>
         <div id="cards">
-          <div class="card" onclick="openGameDetails('barra')">
+          <div class="card card_normal" onclick="openGameDetails('barra')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/barraCastellana.jpg"/>
@@ -97,19 +93,20 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('bolos')">
+          <div class="card card_normal" onclick="openGameDetails('lucha')">
             <div class="card-inner">
               <div class="card-front">
-                <img src="./Img/bolos.jpg"/>
+                <img src="./Img/lucha.jpg"/>
               </div>
               <div class="card-back">
-                <h1>Bolos castellanos</h1>
-                <p>Esta peculiar versión de los bolos conserva los fundamentos de sus respectivos pero añade un giro especial, el objeto a arrojar no será una bola, si no un disco grueso hecho de madera. El objetivo del juego será el mismo que el resto de bolos aquí expuestos, derribar los bolos a distancia. La puntuación se decidirá de igual manera, será premiado aquel que tire más bolos.</p>
+                <h1>Lucha Leonesa <a href="https://www.deportesautoctonoscyl.es/wp-content/uploads/2016/03/LIBRO-DEPORTES-AUTOCTONOS-CYL-web.pdf" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
+                  height="15" ></a></h1>
+                <p>La antigüedad de un ejercicio como la lucha es tanta como la del ser humano. En esta particular versión, dos luchadores se baten sobre un círculo de cesped o colchoneta. Partiendo de un agarre de cinturón, tratan de derribar al rival. Si el derribo es completo se denomina 'caída entera' y equivale a 2 puntos. Si no se llega a derribar del todo al oponente, se denomina 'media caída' y suma 1 punto.</p>
               </div>
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('calva')">
+          <div class="card card_normal" onclick="openGameDetails('calva')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/calva.jpg"/>
@@ -123,19 +120,20 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('llave')">
+          <div class="card card_normal" onclick="openGameDetails('boloBurg')">
             <div class="card-inner">
               <div class="card-front">
-                <img src="./Img/llave.jpg"/>
+                <img src="./Img/burg.jpg"/>
               </div>
               <div class="card-back">
-                <h1>La llave</h1>
-                <p>Juego de lanzamiento de precisión, dónde equipos de entre 4 y 6 miembros lanzarán unas monedas de metal llamadas 'pellos' con el objetivo de acertar a la llave. Lo cual aportará puntos al equipo, el número de puntos variará en función de la modalidad de la llave.</p>
+                <h1>Bolo Burgalés <a href="https://www.deportesautoctonoscyl.es/wp-content/uploads/2016/03/LIBRO-DEPORTES-AUTOCTONOS-CYL-web.pdf" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
+                  height="15" ></a></h1>
+                <p>Esta particular versión de los bolos es quizá la más espectacular de aquellas que se juegan en España. Su origen se sitúa en la zona de Burgos. Se juega en un terreno de tierra apisonada de unos 30 metros de largo y 15 de ancho. El jugador debe arrojar una bola de madera hacia una fila de 3 bolos, tratando de lanzar el bolo alcanzado la mayor distancia posible y apoyando su peso en el 'Pato' para mantener el equilibrio.</p>
               </div>
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('tanga')">
+          <div class="card card_normal" onclick="openGameDetails('tanga')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/tanga.jpg"/>
@@ -152,12 +150,13 @@
                   <li>¿Distancia aproximada de lanzamiento? 20 metros </li>
                   <li>¿Número de tostones por jugador y tirada? 2. </li>
                   <li>¿Número de lanzamientos por partida? 32. </li>
+                  <li>¿Jugada estrella? Sacar cama: el chocón derriba la tanguilla y se coloca a menos distancia que la chapa.</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('rana')">
+          <div class="card card_normal" onclick="openGameDetails('rana')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/rana.jpg"/>
@@ -165,14 +164,14 @@
               <div class="card-back">
                 <h1>La rana <a href="https://www.deportesautoctonoscyl.es/reglamento-de-la-rana/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
                   height="15" ></a></h1>
-                <p>Dice la leyenda que reyes y nobles de Egipto y Mesopotamia ya jugaban al juego de la rana. Estos pedían un deseo antes de lanzar monedas de oro a los estanques con la esperanza de que si una rana o un sapo se las tragaba, el deseo se cumpliría. El juego de la rana, tal y como lo conocemos en la actualidad, 
+                <p>Cuenta la leyenda que reyes y nobles de Egipto y Mesopotamia ya jugaban al juego de la rana. Estos pedían un deseo antes de lanzar monedas de oro a los estanques con la esperanza de que si una rana o un sapo se las tragaba, el deseo se cumpliría. El juego de la rana, tal y como lo conocemos en la actualidad, 
                   consiste en introducir un disco de hierro (petaco) desde la línea de tiro a cualquiera de los agujeros de la mesa de la rana. Se puede jugar individualmente o por parejas. Las partidas se juegan a diez tiradas y, en cada una de ellas, cada jugador tiene que lanzar 10 petacos. La puntuación depende del agujero donde se introduzca el petaco.
                   </p>
               </div>
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('billar')">
+          <div class="card card_normal" onclick="openGameDetails('billar')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/billar.jpg"/>
@@ -187,7 +186,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('troncos')">
+          <div class="card card_normal" onclick="openGameDetails('troncos')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/troncos.jpg"/>
@@ -196,14 +195,14 @@
                 <h1>Corta de Troncos <a href="https://www.deportesautoctonoscyl.es/tronco/" target="_blank"> <img src="../Img/RANA/iconoVerified.png" title="Reglamento oficial del juego" alt="Reglamento oficial del juego" width="15"
                   height="15" ></a></h1>
                 <p>
-                  Es un deporte tradicional de zonas de explotación maderera cuyo origen se sitúa en la comarca de Pinares, entre Burgos y Soria. Consiste en el corte de lotes de madera de indeterminadas medidas en el menor tiempo posible. La herramienta homologada para ello es el hacha. Se juega individualmente o por parejas. Cada cortador puede empezar por cualquier tronco de su fila y no es obligatorio seguir un orden.
+                  Es un deporte típico de zonas de explotación maderera cuyo origen se sitúa en la comarca de Pinares, entre Burgos y Soria. Consiste en el corte de lotes de madera de indeterminadas medidas en el menor tiempo posible. La herramienta homologada para ello es el hacha. Se juega individualmente o por parejas. Cada cortador puede empezar por cualquier tronco de su fila y no es obligatorio seguir un orden.
                   Existen dos posiciones de los troncos: vertical (solo está permitido un corte) y estilo australiano (horizontal de manera que cada cortador pueda darle un corte). 
                 </p>
               </div>
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('boloFemenino')">
+          <div class="card card_normal" onclick="openGameDetails('boloFemenino')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/boloFemeninoAbades.jpg"/>
@@ -213,12 +212,12 @@
                   height="15" ></a></h1>
                 <p>Modalidad del juego de los bolos, practicado en su origen exclusivamente por las mujeres de la localidad de Abades en Segovia.
                 El juego completo está compuesto por 8 bolos, el bolo Miche o Gerardo, 2 bolas y 2 bolos de lanzar. 
-                bolos se colocan en cuatro posiciones diferentes que corresponden con cada jugada: en forma de cuadrado, rombo, triángulo y línea recta. En todas ellas (excepto en la forma de triángulo) el Miche se coloca en el centro. La mayor puntuación se obtiene al derribar este en la posición de triángulo.</p>
+                Los bolos se colocan en cuatro posiciones diferentes que corresponden con cada jugada: en forma de cuadrado, rombo, triángulo y línea recta. En todas ellas (excepto en la forma de triángulo) el Miche se coloca en el centro. La mayor puntuación se obtiene al derribar este en la posición de triángulo.</p>
               </div>
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('boloPalentino')">
+          <div class="card card_normal" onclick="openGameDetails('boloPalentino')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/boloPalentino.jpg"/>
@@ -231,7 +230,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('boloRib')">
+          <div class="card card_normal" onclick="openGameDetails('boloRib')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/boloRib.jpg"/>
@@ -247,7 +246,7 @@
             </div>
           </div>
 
-          <div class="card" onclick="openGameDetails('tresTablones')">
+          <div class="card card_normal" onclick="openGameDetails('tresTablones')">
             <div class="card-inner">
               <div class="card-front">
                 <img src="./Img/tresTablones.jpg"/>
@@ -257,7 +256,7 @@
                   height="15" ></a></h1>
                 <p>
                   Tiene su origen en la comarca de las Merindades, provincia de Burgos. El juegabolos o campo de juego se divide en tres zonas: zona de tiro, zona de cureñas y zona de birle. Se emplean tres tablones sobre los que se plantan tres bolos en cada uno; después se planta el mico, por detrás de los de los bolos centrales.
-                  Se realizan dos tiradas, una de subida (desde el cas) y otra de bajada ( birle). Consiste en lanzar la bola desde el cas intentando derribar el mayor numero de bolos posibles y el mico inclusive. El primer bote de la bola debe caer en la cureña; en otro caso se produce una morra y se anula la tirada.
+                  Se realizan dos tiradas, una de subida (desde el cas) y otra de bajada (birle). Consiste en lanzar la bola desde el cas intentando derribar el mayor número de bolos posibles y el mico inclusive. El primer bote de la bola debe caer en la cureña; en otro caso se produce una morra y se anula la tirada.
                 </p>
               </div>
             </div>
@@ -267,7 +266,7 @@
 
       <div id="game-overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeGameDetails()"><i style="font-size: 100px;" class="material-icons">keyboard_arrow_up</i></a>
-        <div id="game-overlay-content">
+        <div id="game-overlay-content" onclick="closeGameDetails()">
         </div>
       </div>
 
@@ -275,37 +274,39 @@
         <div id="trees_intro">
           <h1>Árboles singulares</h1>
           <hr style="width:65%">
-          <p>Haga <u style="color:#ef233c">clic sobre cada imágen</u> para desvelar una breve descripción de la especie en cuestión.</p>
+          <p>Haga <span style="color:#ef233c">clic sobre cada imagen</span> para desvelar una breve descripción de las distintas especies.</p>
         </div>
         <div id="trees_list">
           <div class="tree_group">
             <div class="tree_container" style="background-image:url('Img/Trees/abiesnordmanniana.jpg')">
               <h1 class="especie">Abies nordmanniana</h1>
-              <p class="singularidad">Nativo de Turquía, este árbol es famoso por su uso en la festividad navideña aunque puede alcanzar los 60 metros de altura.</p>
+              <p class="singularidad">Nativo de Turquía, este árbol es famoso por su uso en la festividad navideña. Puede alcanzar los 60 metros de altura.</p>
             </div>
-            <div class="tree_container" style="background-image:url('./Img/Trees/acercampestre.jpg')">
+            <div class="tree_container active" style="background-image:url('./Img/Trees/acercampestre.jpg')">
               <h1 class="especie">Acer campestre</h1>
-              <p class="singularidad">Autóctono en la península ibérica. Hoja caduca con diferente tonalidad en su zona inferior, dónde son pelosas y blanquecinas.</p>
+              <p class="singularidad">Autóctono en la península ibérica. Hoja caduca con diferente tonalidad en su zona inferior, donde son pelosas y blanquecinas.</p>
             </div>
             <div class="tree_container" style="background-image:url('./Img/Trees/alnusglutinosa.jpg')">
               <h1 class="especie">Alnus glutinosa</h1>
               <p class="singularidad">Conocido como el aliso común, este árbol de entre 20 y 30 metros de altura se caracteriza pos sus hojas con peciolos cortos.</p>
             </div>
+          </div>
+          <div class="tree_group">
             <div class="tree_container" style="background-image:url('./Img/Trees/arbutusunedo.jpg')">
               <h1 class="especie">Arbutus unedo</h1>
-              <p class="singularidad">Arbusto mediano de entre 4 y 10 metros de altura con un fruto rojizo comestible muy usado en mermeladas y confituras.</p>
+              <p class="singularidad">Arbusto mediano de entre 4 y 10 metros de altura. Su fruto es rojizo y comestible, muy usado en mermeladas y confituras.</p>
             </div>
             <div class="tree_container" style="background-image:url('./Img/Trees/betulaverrucosa.jpg')">
-              <h1 class="especie">Betula verrucosaa</h1>
+              <h1 class="especie">Betula verrucosa</h1>
               <p class="singularidad">Árbol delgado cuyas ramas comienzan a media altura.</p>
             </div>
-            <div class="tree_container active" style="background-image:url('./Img/Trees/castanea.jpg')">
+            <div class="tree_container" style="background-image:url('./Img/Trees/castanea.jpg')">
               <h1 class="especie">Castanea sativa</h1>
-              <p class="singularidad">Conocido comunmente como el castaño, llega a los 30 metros y su fruto, la castaña, es comestible.</p>
+              <p class="singularidad">Conocido comúnmente como el castaño, llega a los 30 metros y su fruto, la castaña, es comestible.</p>
             </div>
             <div class="tree_container" style="background-image:url('./Img/Trees/cedrus.jpeg')">
               <h1 class="especie">Cedrus</h1>
-              <p class="singularidad">Conocido comunmente como el cedro, es un árbol de gran tamaño ubicado en altitudes a partir de los 1000 metros.</p>
+              <p class="singularidad">Conocido comúnmente como el cedro. Es un árbol de gran tamaño ubicado en altitudes a partir de los 1000 metros.</p>
             </div>
           </div>
 
@@ -313,7 +314,7 @@
           <div class="tree_group">
             <div class="tree_container" style="background-image:url('Img/Trees/fagussylvatica.webp')">
               <h1 class="especie">Fagus sylvatica</h1>
-              <p class="singularidad">Árbol de longevidad cercana a los 250 años que puede alcanzar los 35 o 40 metros de altura. Su fruto se abre al madurar y muestra así las semillas.</p>
+              <p class="singularidad">Árbol de longevidad cercana a los 250 años. Puede alcanzar los 35 o 40 metros de altura. Su fruto se abre al madurar y muestra así las semillas.</p>
             </div>
             <div class="tree_container" style="background-image:url('./Img/Trees/fraxinus.jpg')">
               <h1 class="especie">Fraxinus angustifolia</h1>
@@ -321,23 +322,25 @@
             </div>
             <div class="tree_container" style="background-image:url('./Img/Trees/ilex.jpg')">
               <h1 class="especie">Ilex aquifolium</h1>
-              <p class="singularidad">Arbusto conocido como Acebo en la zona peninsular, puede llegar a medir 20 metros de altura y vivir siglos.</p>
+              <p class="singularidad">Arbusto conocido como Acebo en la zona peninsular. Puede llegar a medir 20 metros de altura y vivir siglos.</p>
             </div>
+            </div>
+          <div class="tree_group">
             <div class="tree_container" style="background-image:url('./Img/Trees/juglans.jpg')">
               <h1 class="especie">Juglans regia</h1>
-              <p class="singularidad">Llamado nogal español llega a los 25 metros de altura y produce como fruto la nuez.</p>
+              <p class="singularidad">Se conoce como nogal español, llega a los 25 metros de altura y su fruto es la nuez.</p>
             </div>
             <div class="tree_container" style="background-image:url('./Img/Trees/juniperus.jpg')">
               <h1 class="especie">Juniperus thurifera</h1>
-              <p class="singularidad">El junípero es un árbol con una gran variedad de especies que varían entre arbustos de medio tamaño hasta árboles de 40 metros de altura.</p>
+              <p class="singularidad">El junípero es un árbol que tiene una gran variedad de especies que varían entre arbustos de medio tamaño hasta árboles de 40 metros de altura.</p>
             </div>
-            <div class="tree_container active" style="background-image:url('./Img/Trees/morus.jpg')">
+            <div class="tree_container" style="background-image:url('./Img/Trees/morus.jpg')">
               <h1 class="especie">Morus nigra</h1>
-              <p class="singularidad">El moral negro es una especie de árbol conocido por producir como fruto la mora.</p>
+              <p class="singularidad">El moral negro es una especie de árbol que produce como fruto la mora.</p>
             </div>
             <div class="tree_container" style="background-image:url('./Img/Trees/pinus.jpg')">
               <h1 class="especie">Pinus pinea</h1>
-              <p class="singularidad">Llamado coloquialmente como el pino piñonero, especie que acumula sus ramificaciones en la copa y produce como fruto los piñones (fruto seco).</p>
+              <p class="singularidad">Llamado coloquialmente como el pino piñonero, es una especie que acumula sus ramificaciones en la copa y produce como fruto los piñones (fruto seco).</p>
             </div>
           </div>
 
@@ -345,27 +348,29 @@
           <div class="tree_group">
             <div class="tree_container" style="background-image:url('./Img/Trees/crateagus.jpg')">
               <h1 class="especie">Crateagus monogyna</h1>
-              <p class="singularidad">Llamdo espino albar o blanco en España es un arbusto, en ocasiones, o pequeño árbol en otras, con ramas espinosas y fruto comestible.</p>
+              <p class="singularidad">Llamado espino albar o blanco en España es un arbusto con ramas espinosas y fruto comestible.</p>
             </div>
             <div class="tree_container" style="background-image:url('./Img/Trees/taxus.jpg')">
               <h1 class="especie">Taxus baccata</h1>
-              <p class="singularidad">Nombrado tejo común o tejo negro es una conínfera de entre 10 y 28 metros de altura usado en cementerios por su excepcional longeviadad de hasta 5000 años.</p>
+              <p class="singularidad">Se denomina tejo común o tejo negro. Es una conífera de entre 10 y 28 metros de altura y es usado en cementerios por su excepcional longevidad: puede llegar a vivir hasta 5000 años.</p>
             </div>
             <div class="tree_container" style="background-image:url('./Img/Trees/tilia.jpg')">
               <h1 class="especie">Tilia platyphyllos</h1>
-              <p class="singularidad">Árbol de tamaño medio con una hoja grande con usos medicinales, conocida como tila, comúnmente usada para ejercer un efecto sedante.</p>
+              <p class="singularidad">Árbol de tamaño medio que tiene una hoja grande con usos medicinales, conocida como tila, comúnmente usada para ejercer un efecto sedante.</p>
             </div>
+          </div>
+          <div class="tree_group">
             <div class="tree_container" style="background-image:url('./Img/Trees/quercus.jpg')">
               <h1 class="especie">Quercus suber</h1>
-              <p class="singularidad">Llamado alcornoque es un árbol originario de Europa utilizado para la extracción de corcho y famoso por su producción de bellotas.</p>
+              <p class="singularidad">También conococido como alcornoque, es un árbol originario de Europa. Es utilizado para la extracción de corcho y destaca por su producción de bellotas.</p>
             </div>
             <div class="tree_container" style="background-image:url('./Img/Trees/sequoiadendron.jpg')">
               <h1 class="especie">Sequoiadendron giganteum</h1>
-              <p class="singularidad">Conocida como la secuoya gigante, es un árbol de entre 50 y 85 metros de altura y 7 de diámetro aunque se tiene conocimiento de algunos de 94 metros de altura.</p>
+              <p class="singularidad">Conocida como la secuoya gigante, es un árbol de entre 50 y 85 metros de altura y 7 de diámetro. Algunos pueden llegar hasta los 94 metros de altura.</p>
             </div>
             <div class="tree_container" style="background-image:url('./Img/Trees/sorbus.jpg')">
               <h1 class="especie">Sorbus domestica</h1>
-              <p class="singularidad">Conocido como sorbo o jerbal  es un árbol mediano, que puede llegar a medir 20 metros cuyos frutos pueden ser comestibles si se someten a una sobremaduración.</p>
+              <p class="singularidad">Conocido como sorbo o jerbal, se trata de un árbol mediano, que puede llegar a medir 20 metros. Sus frutos pueden ser comestibles si sobremaduran.</p>
             </div>
           </div>
         </div>
@@ -373,8 +378,11 @@
 
       <div id="bottom">
         <div class="bottomLeft">
-          <h1>Jugando por Castilla y León - VI Concurso de Datos Abiertos</h1>
-          <p>Juegos tradicionales | Árboles singulares | Zonas recreativas</p>
+          <h1>Play for Keeps. Play for CyL - VI Concurso de Datos Abiertos</h1>
+          <img src="./Img/github.png" title="Enlace al proyecto"/>
+          <a href="https://github.com/dqnid/JCYL_Juegos" target="_blank"> Proyecto</a>
+          <img src="./Img/cyl.png" title="Enlace a web datos abiertos"/>
+          <a href="https://datosabiertos.jcyl.es/web/es/datos-abiertos-castilla-leon.html" target="_blank">Datos Abiertos de Castilla y León</a>
         </div>
         <div class="bottomRight">
           <h2>Daniel Heras Quesada</h2>
@@ -410,7 +418,6 @@
     
     <script src="./Datos/parque2.png"></script>
     <script src="./Datos/prismaticos.png"></script>
-    <script src="./Datos/landscape-7264427.svg"></script>    
     <script type="text/javascript" src="mapa.js"></script>
     
     <script>
@@ -462,6 +469,14 @@
         {
           "id":"tresTablones",
           "html":"./Games/boloTresTablones.html"
+        },
+        {
+          "id":"lucha",
+          "html":"./Games/luchaLeonesa.html"
+        },
+        {
+          "id":"boloBurg",
+          "html":"./Games/boloBurgales.html"
         }
       ]
       function openGameDetails(name) {

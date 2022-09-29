@@ -13071,7 +13071,7 @@
 1839011	Beolgyo	Beolgyo	Bakkyo-ri,Bakkyō-ri,Beolgyo,Polgyo,Pŏlgyo,beolgyo,벌교	34.84494	127.34293	P	PPL	KR		16				19842		8	Asia/Seoul	2012-01-18
 1839071	Hoko	Hoko	Geijitsu,Hoko,Hoko-do,Hokō-dō,P'ohang,P'ohang-dong,P’ohang,P’ohang-dong	36.03222	129.365	P	PPL	KR		14				500000		6	Asia/Seoul	2012-01-18
 1839652	Osan	Osan	Osan,Osan-ni,Usan-ri,osan,오산	37.15222	127.07056	P	PPL	KR		13				158978		22	Asia/Seoul	2012-01-18
-1839726	Asan	Asan	Asan,Asan-si,Onyang,Onyo,Onyō,asan,asansi,ya shan shi,Асан,Асан-си,牙山市,아산,아산시,�·	36.78361	127.00417	P	PPL	KR		17				97749		27	Asia/Seoul	2012-01-18
+1839726	Asan	Asan	Asan,Asan-si,Onyang,Onyo,Onyō,asan,asansi,ya shan shi,Асан,Асан-си,牙山市,아산,아산시,p·	36.78361	127.00417	P	PPL	KR		17				97749		27	Asia/Seoul	2012-01-18
 1839873	옥천군	ogcheongun	Kumgu-ri,ogcheon,ogcheongun,옥천,옥천군	36.3012	127.568	P	PPL	KR		05				56634		97	Asia/Seoul	2010-05-18
 1840179	Kosong	Kosong	Kosong,goseong,goseong-gun,고성,고성군	38.37881	128.4676	P	PPL	KR	KR	06				62446		17	Asia/Seoul	2010-07-28
 1840211	Nonsan	Nonsan	Nonsan,Ronsan,Ronzan,lun shan shi,nonsansi,Нонсан,論山市,논산시	36.20389	127.08472	P	PPL	KR		17				43845		16	Asia/Seoul	2012-01-18

@@ -3,12 +3,13 @@ var map = L.map('map').setView([41.7544, -4.7819], 8);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
+    minZoom: 7,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 const basemaps = {
-    StreetView: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}),
-    Topography: L.tileLayer.wms('http://ows.mundialis.de/services/service?',   {layers: 'TOPO-WMS'}),
-    Places: L.tileLayer.wms('http://ows.mundialis.de/services/service?', {layers: 'OSM-Overlay-WMS'})
+    StreetView: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, minZoom: 7, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}),
+    Topography: L.tileLayer.wms('http://ows.mundialis.de/services/service?',   {maxZoom: 19, minZoom: 7, layers: 'TOPO-WMS'}),
+    Places: L.tileLayer.wms('http://ows.mundialis.de/services/service?', {maxZoom: 19, minZoom: 7, layers: 'OSM-Overlay-WMS'})
 };
 L.control.layers(basemaps).addTo(map);
 
@@ -101,7 +102,7 @@ map.attributionControl.addAttribution('Datos abiertos JCYL &copy; <a href="https
 var botonesControl_cyl_provincias = L.control({position: 'topright'}); // creación del contenedor de botones
 botonesControl_cyl_provincias.onAdd = function() {                     // creación de los botones
     var botones_cyl_provincias = L.DomUtil.create('div', 'class-css-botones');
-    botones_cyl_provincias.innerHTML = `<button id="cyl_provincias"  class="btn btn-primary"><img src="./Datos/cyl_recintos.png" height ="30" width="30" /></button>`;
+    botones_cyl_provincias.innerHTML = `<button id="cyl_provincias"  class="btn btn-primary"><img src="./Datos/cyl_recintos.png" title="Límites provinciales: recintos" alt = "Límites provinciales: recintos" height ="30" width="30" /></button>`;
     
     return botones_cyl_provincias;
 };
@@ -123,7 +124,7 @@ function popup_arboles(feature, layer) {
     const p = feature.properties
     p.title = p.paraje || p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title'
     if(feature.properties && feature.properties.especie){
-        let gmapsRef = "https://www.google.com/maps/@" + feature.geometry.coordinates[1] + "," + feature.geometry.coordinates[0] + ",15z";
+        let gmapsRef = "https://www.google.com/maps/@" + feature.geometry.coordinates[0].reverse() + ",15z";
         layer.bindPopup((feature.properties.nombre ? "<strong>Nombre: </strong>" + feature.properties.nombre + "<br>" : '') +
             (feature.properties.especie ? "<strong>Especie: </strong>" + feature.properties.especie + "<br>" : '') +
             (feature.properties.paraje ? "<strong>Paraje: </strong>" + feature.properties.paraje + "<br>" : '') +
@@ -295,15 +296,16 @@ marcador_coord.on('drag', function(event){
 });
 /////////////////AGREGAR ZONAS RECREATIVAS
 
-function popup_zona_recreativa(feature,layer){
+function popup_zona_recreativa(feature, layer) {
     const p = feature.properties
-    p.title = p.paraje|| p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title'
-    if(feature.properties && feature.properties.equip_b_nombre){
+    p.title = p.paraje || p.equip_b_no || p.nombre || p.equip_b_nombre || p.t_municipa || p.NAMEUNIT || p.POB_TOTAL || p.equip_b_ac || p.equip_b_acceso_modo || p.provincia//create new property 'title'
+    if (feature.properties && feature.properties.equip_b_nombre) {
         let gmapsRef = "https://www.google.com/maps/@" + feature.geometry.coordinates[1] + "," + feature.geometry.coordinates[0] + ",15z";
 
-       layer.bindPopup("<strong>Nombre: </strong>"+ feature.properties.equip_b_nombre+'<br>'+
-       "<strong>Acceso: </strong>"+ feature.properties.equip_b_acceso_modo  + '<br>' + 
-       "<a href='"+ gmapsRef +"' target='_blank'>Abrir en Google Maps</a>");
+        layer.bindPopup((feature.properties.equip_b_nombre ? "<strong>Nombre </strong>" + feature.properties.equip_b_nombre + "<br>" : '') +
+            (feature.properties.equip_b_acceso_modo ? "<strong>Acceso: </strong>" + feature.properties.equip_b_acceso_modo + "<br>" : '') +
+
+            "<a href='" + gmapsRef + "' target='_blank'>Abrir en Google Maps</a>");
     }
 }
 
@@ -428,3 +430,19 @@ function upDateMapConfig(){
 function centerMap(){
     map.setView([41.66585549600211, -4.460670126660962], 8);    
 }
+
+////////AGREGAR BOTON CENTRAR
+var botonesControl = L.control({ position: 'bottomleft' }); // creación del contenedor de botones
+botonesControl.onAdd = function () {                     // creación de los botones
+    var botones = L.DomUtil.create('div', 'class-css-botones');
+    botones.innerHTML = `<button id="centrar"  class="btn btn-primary"><img src="./Img/RANA/centrar.png" title="Centrar" alt = "Centrar" height ="30" width="30" /></button>`;
+    
+    return botones;
+};
+botonesControl.addTo(map);   // adición del contenedor dentro del mapa
+
+document.getElementById('centrar').addEventListener('click', function centerMap() {
+    
+    map.setView([41.7544, -4.7819], 8);    
+        
+});
