@@ -726,7 +726,7 @@ bordeR-radius: 5px;
 #bottom img{
   width: 30px;
   height: 30px;
-  float: left;
+  vertical-align: middle;
   margin-right: 5px;
 }
 
@@ -734,4 +734,8 @@ bordeR-radius: 5px;
   color: black;
   vertical-align: text-bottom;
   font-size: 22px;
+}
+
+.leaflet-popup-tip {
+  background:rgb(109, 158, 45);
 }
