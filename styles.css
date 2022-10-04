@@ -834,5 +834,23 @@ bordeR-radius: 5px;
     margin-left: 30px;
     margin-right: 30px;
   }
+  
+  #bottom{
+    grid-template-columns: 1fr;
+  }
+#bottom h1{
+  color: white;
+  font-size: 24px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+  #bottom .bottomLeft{
+    grid-column: 1;
+  }
+
+  #bottom .bottomRight{
+    grid-column: 1;
+  }
 
 }
