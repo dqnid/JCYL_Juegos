@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 
 html,body{
   height: 100%;
@@ -86,7 +88,7 @@ h1{
   transition: transform .2s;
 }
 
-#trees_btn:hover{
+#places_btn:hover{
   color: #ddd;
   background-color: #2B2D42;
   transform: scale(1.2);
@@ -98,7 +100,7 @@ h1{
   transform: scale(1.2);
 }
 
-#places_btn:hover{
+#trees_btn:hover{
   color: #ddd;
   background-color: #2B2D42;
   transform: scale(1.2);
@@ -248,15 +250,15 @@ bordeR-radius: 5px;
   width: auto;
   margin-left: 200px;
   margin-right: 200px;
-  row-gap: 100px;
-  column-gap: 100px;
+  row-gap: 92px;
+  column-gap: 92px;
   width: auto;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
 .card {
   background-color: transparent;
-  perspective: 1000px;
+  perspective: 800px;
   border-radius: 10px;
   cursor: context-menu;
 }
@@ -477,13 +479,13 @@ bordeR-radius: 5px;
   width: auto;
   text-align: center;
   padding-top: 100px;
-  margin-left: 195px;
-  margin-right: 195px;
+  margin-left: 200px;
+  margin-right: 200px;
   margin-bottom: 40px;
 }
 
 #trees_intro{
-  width: auto;
+  width: 100%;
   text-align: center;
   width: auto;
   margin-bottom: 40px;
@@ -511,9 +513,11 @@ bordeR-radius: 5px;
 .tree_group{
   display: flex;
   width: 100%;
+  flex: 0;
 }
 
 .tree_container{
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -643,6 +647,7 @@ bordeR-radius: 5px;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
+  vertical-align: middle;
 }
 
 #bottom h1{
@@ -677,6 +682,7 @@ bordeR-radius: 5px;
   margin-left: 200px;
   margin-top: auto;
   margin-bottom: auto;
+  vertical-align: text-bottom;
 }
 
 #bottom img{
@@ -693,6 +699,10 @@ bordeR-radius: 5px;
 }
 
 @media screen and (max-width: 1800px) {
+  #cards{ 
+    row-gap: 80px;
+    column-gap: 80px;
+  }
   .card-inner{
     height: 390px;
     width: 390px;
@@ -720,7 +730,15 @@ bordeR-radius: 5px;
   }
 }
 
+.leaflet-popup-tip {
+  background:rgb(109, 158, 45);
+}
+
 @media screen and (max-width: 1600px) {
+  #cards{ 
+    row-gap: 60px;
+    column-gap: 60px;
+  }
   .card-inner{
     height: 330px;
     width: 330px;
@@ -749,6 +767,11 @@ bordeR-radius: 5px;
 }
 
 @media screen and (max-width: 1500px) {
+  #cards{ 
+    row-gap: 40px;
+    column-gap: 40px;
+  }
+  
   #title_navbar{
     margin-left: 30px;
   }
@@ -810,6 +833,24 @@ bordeR-radius: 5px;
   #trees{
     margin-left: 30px;
     margin-right: 30px;
+  }
+  
+  #bottom{
+    grid-template-columns: 1fr;
+  }
+#bottom h1{
+  color: white;
+  font-size: 24px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+  #bottom .bottomLeft{
+    grid-column: 1;
+  }
+
+  #bottom .bottomRight{
+    grid-column: 1;
   }
 
 }

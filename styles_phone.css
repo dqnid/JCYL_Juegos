@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
 html,body{
   height: 100%;
@@ -684,9 +685,11 @@ bordeR-radius: 5px;
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
   padding-top: 20px;
   padding-bottom: 20px;
+  text-align: left;
 }
 
 #bottom h1{
@@ -710,23 +713,27 @@ bordeR-radius: 5px;
 }
 
 #bottom .bottomRight{
-  margin-right: 20px;
   margin-left: auto;
-  text-align: right;
+  margin-right: auto;
+  text-align: left;
   margin-top: auto;
   margin-bottom: auto;
   vertical-align:text-bottom;
+  grid-column: 1;
+  grid-row: 2;
 }
 #bottom .bottomLeft{
   margin-left: 20px;
   margin-top: auto;
   margin-bottom: auto;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 #bottom img{
   width: 30px;
   height: 30px;
-  float: left;
+  vertical-align: middle;
   margin-right: 5px;
 }
 
@@ -734,4 +741,8 @@ bordeR-radius: 5px;
   color: black;
   vertical-align: text-bottom;
   font-size: 22px;
+}
+
+.leaflet-popup-tip {
+  background:rgb(109, 158, 45);
 }

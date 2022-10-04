@@ -4,10 +4,10 @@ var map = L.map('map').setView([41.7544, -4.7819], 8);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     minZoom: 7,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
 }).addTo(map);
 const basemaps = {
-    StreetView: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, minZoom: 7, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}),
+    StreetView: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, minZoom: 7, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'}),
     Topography: L.tileLayer.wms('http://ows.mundialis.de/services/service?',   {maxZoom: 19, minZoom: 7, layers: 'TOPO-WMS'}),
     Places: L.tileLayer.wms('http://ows.mundialis.de/services/service?', {maxZoom: 19, minZoom: 7, layers: 'OSM-Overlay-WMS'})
 };
@@ -64,7 +64,7 @@ function highlightFeature(e){
     var layer = e.target;
     layer.setStyle({
         weight: 5,
-        color: '#666',
+        color: '#8A0808',
         dashArray: '',
         fillOpacity: 0.7
     });
