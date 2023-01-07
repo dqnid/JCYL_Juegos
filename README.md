@@ -1,4 +1,5 @@
 # JCYL_Juegos
+### Ganador en la categoría estudiantes del premio "Datos Abiertos de la Comunidad de Castilla y León" en el año 2022
 Proyecto de concurso público de la junta de Castilla y León sobre el uso de datos abiertos.
 Miembros del proyecto:
   - Carlos Montero Pascual
